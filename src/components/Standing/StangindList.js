@@ -4,12 +4,15 @@ import fcb_logo from '../../static/img/fcb_logo.png';
 const ListWrapper = styled.div`
     display:flex;
     flex-direction: column;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    font-weight: bold;
     padding: 0.5rem;
+    background-color: #fafafa;
 `;
 
 const ListItemWrapper = styled.div`
     display:grid;
+    
     grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
     div {
         display:flex;

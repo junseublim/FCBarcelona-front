@@ -4,7 +4,7 @@ import StandingList from './components/Standing/StangindList';
 import UpcomingList from './components/UpcomingMatches/UpcomingList';
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Header/>
       <StandingList/>
       <div className="middle">C</div>
