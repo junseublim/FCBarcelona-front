@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 
 const HeaderDropDownWrapper = styled.div`
-    display: none;
+    visibilibity: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
     position: absolute;
     left: 0;
     width: 100%;
@@ -11,6 +13,7 @@ const HeaderDropDownWrapper = styled.div`
 `;
 
 const HeaderDropDownListWrapper = styled.div`
+    display: none;
     width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
