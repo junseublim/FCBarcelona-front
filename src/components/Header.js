@@ -18,7 +18,9 @@ const Header = () => {
                     <img src={fcb_logo} alt=""/>    
                 </div>
                 <div className="darkmode">
+                    <span>Home</span>
                     <ToggleBtn/>
+                    <span>Away</span>
                 </div>
             </div>
             <div>

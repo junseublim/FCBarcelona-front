@@ -1,43 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import fcb_logo from '../../static/img/fcb_logo.png';
-const ListWrapper = styled.div`
-    display:flex;
-    flex-direction: column;
-    font-size: 0.6rem;
-    font-weight: bold;
-    padding: 0.5rem;
-    background-color: #fafafa;
-`;
-
-const ListItemWrapper = styled.div`
-    display:grid;
-    
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
-    div {
-        display:flex;
-        flex-direction: row;
-        margin-right: 0.5rem;
-        justify-self: center;
-        align-items: center;
-        img {
-            width: 1.4rem;
-            margin-right: 0.3rem;
-        }
-    }
-    margin-top: 0.3rem;
-`;
-
-const ListHeader = styled.div`
-    display:grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: lightgrey;
-    padding: 0.2rem;
-    div {
-        margin-right: 0.5rem;
-        justify-self: center;
-    }
-`;
 
 const tmp ={name: '바르셀로나', 
     matches: 21,
@@ -59,8 +21,8 @@ const StandingList = () => {
     const [standing, setStanding] = useState(newStanding);
     return (
         
-        <ListWrapper>
-        <ListHeader>
+        <div className="standing-list">
+        <div className="standing-header">
             <div>순위</div>
             <div>팀</div>
             <div>경기</div>
@@ -68,11 +30,11 @@ const StandingList = () => {
             <div>무</div>
             <div>패</div>
             <div>승점</div>
-        </ListHeader>
+        </div>
             {
         standing.map(team => {
             return (
-                <ListItemWrapper>
+                <div key={team.points} className="standing-item">
                     <div>{team.rank}</div>
                     <div><img src={fcb_logo} alt=""/>{team.name}</div>
                     <div>{team.matches}</div>
@@ -80,11 +42,11 @@ const StandingList = () => {
                     <div>{team.draws}</div>
                     <div>{team.loses}</div>
                     <div>{team.points}</div>
-                </ListItemWrapper>
+                </div>
             )
             
         })}
-        </ListWrapper>
+        </div>
     )
 };
 

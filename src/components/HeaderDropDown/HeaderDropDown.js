@@ -40,7 +40,7 @@ const HeaderDropDown = ({type}) => {
         <HeaderDropDownWrapper className="content">
             {
                 droplist.map(item => (
-                    <HeaderDropDownListWrapper className="link">
+                    <HeaderDropDownListWrapper className="link" key={item}>
                         {item}
                     </HeaderDropDownListWrapper>
                 ))
