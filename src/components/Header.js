@@ -2,13 +2,16 @@ import React from 'react';
 import fcb_logo from '../static/img/fcb_logo.png';
 import HeaderDropDown from './HeaderDropDown/HeaderDropDown';
 import ToggleBtn from './common/ToggleBtn';
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className="header">
-            <div className="main">
-                <img src={fcb_logo} alt=""/>
-                <span>FC BARCELONA</span>
-            </div>
+            <Link to="/">
+                <div className="main">
+                    <img src={fcb_logo} alt=""/>
+                    <span>FC BARCELONA</span>
+                </div>
+            </Link>
             <div className="top-header">
                 <div>FOLLOW FC BARCELONA</div>
                 <div className="sns-list">
@@ -24,9 +27,11 @@ const Header = () => {
                 </div>
             </div>
             <div>
-                <span>
-                    SQUAD
-                </span>
+                <Link to="/squad">
+                    <span>
+                        SQUAD
+                    </span>
+                </Link>
                 <HeaderDropDown type={0}/>
             </div>
             
