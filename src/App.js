@@ -8,15 +8,13 @@ import {
   Link
 } from "react-router-dom";
 import MainPage from './pages/MainPages/MainPage';
-import { useEffect } from 'react';
-import {useMode} from './lib/useMode';
+import { useEffect, useContext } from 'react';
+import ThemeContext, { ThemeProvider } from './contexts/theme';
 function App() {
-  const [componentMounted] = useMode();
-  if (!componentMounted) {
-    return <div/>
-  }
+  const {theme, toggleTheme} = useContext(ThemeContext);
 
   return (
+    <ThemeProvider>
     <div className="App" >
       <Header/>
       <StandingList/>
@@ -25,6 +23,7 @@ function App() {
       <div className="footer">E</div>
       
     </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,9 +1,23 @@
-import { useState, useEffect } from "react";
+import React, {createContext, useState, useEffect} from 'react';
 
+const ThemeContext = createContext({
+    state: {theme: 'light'},
+    actions: {
+        toggleTheme: () => {}
+    } 
+});
 
-export const useMode = () => {
+const ThemeProvider = ({children}) => {
     const [theme, setTheme] = useState('light');
-    const [componentMounted, setComponentMounted] = useState(false);
+
+    useEffect(() => {
+        const localTheme = window.localStorage.getItem('theme');
+        let isDark;
+        if (localTheme) isDark = localTheme === 'dark' ? true : false;
+        else isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDark) setMode('dark');
+        //setComponentMounted(true);
+    }, []);
 
     const setMode = mode => {
         window.localStorage.setItem('theme', mode);
@@ -27,6 +41,7 @@ export const useMode = () => {
     }
 
     const toggleTheme = () => {
+        console.log("hello")
         if (theme === 'light') {
             setMode('dark')
         }
@@ -35,13 +50,17 @@ export const useMode = () => {
         }
     }
 
-    useEffect(() => {
-        const localTheme = window.localStorage.getItem('theme');
-        let isDark;
-        if (localTheme) isDark = localTheme === 'dark' ? true : false;
-        else isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (isDark) setMode('dark');
-        setComponentMounted(true);
-    }, []);
-    return [theme, toggleTheme, componentMounted]
-};
+    const value = {
+        state: {theme},
+        actions: {toggleTheme}
+    };
+
+    return (
+        <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    )
+}
+
+const {Consumer: ThemeConsumer} = ThemeContext;
+export {ThemeProvider, ThemeConsumer};
+
+export default ThemeContext;

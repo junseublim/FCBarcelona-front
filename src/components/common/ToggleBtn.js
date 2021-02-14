@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import {useMode} from '../../lib/useMode';
-
+import React, { useEffect, useState, useContext } from 'react';
+import ThemeContext from '../../contexts/theme';
 const ToggleBtn = () => {
-    const [theme, toggleTheme, componentMounted] = useMode();
+    const {state, actions} = useContext(ThemeContext);
+    const theme = state.theme;
+    const toggleTheme = actions.toggleTheme;
     useEffect(() => {
         console.log(theme);
         const app = document.querySelector("html");
