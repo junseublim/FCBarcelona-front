@@ -10,19 +10,20 @@ import {
 import MainPage from './pages/MainPages/MainPage';
 import { useEffect, useContext } from 'react';
 import ThemeContext, { ThemeProvider } from './contexts/theme';
+
 function App() {
-  const {theme, toggleTheme} = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <ThemeProvider>
-    <div className="App" >
-      <Header/>
-      <StandingList/>
-      <MainPage/>
-      <UpcomingList/>
-      <div className="footer">E</div>
-      
-    </div>
+      <div className="App" >
+        <Header />
+        <StandingList />
+        <MainPage />
+        <UpcomingList />
+        <div className="footer">E</div>
+
+      </div>
     </ThemeProvider>
   );
 }

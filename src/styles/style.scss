@@ -88,6 +88,7 @@ html {
 :root {
     --background-color: white;
     --text-color: $barcagold;
+
 }
 :root[class*="dark"] {
     --background-color: #1d1b1e;
@@ -275,47 +276,137 @@ html {
 .main-view {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+
     .img-wrapper {
-        width: 100%;
-        display: block;
-        position: relative;
-        margin-top: 1rem;
-        
+        width: 50rem;
         .main-img {
-            width: 60%;
-            margin-left: 20%;
-            position: relative;
+            margin-left: 10rem;
+            width: 30rem;
             display: block;
+            border-top-right-radius: 5%;
+            border-top-left-radius: 5%;
         }
-        .blur-img {
-            display: block;
-            z-index: -1;
-            position: absolute;
-            filter: blur(1px);
-            width: 70%;
-            border: 0;
-            top: 0;
-            bottom: 0;
-            left: 15%;
-            right: 0;
-        }
+        
     }
     .article {
-        width: 80%;
+        width: 30rem;
         transition: all linear 0.2s;
         background: var(--background-color);
+        border-bottom-right-radius: 5%;
+        border-bottom-left-radius: 5%;
     }
     .article-title {
         background: linear-gradient(90deg,#cd122d,#154284);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 800;
-        font-size: 3rem;
-        width: 100%;
-        height: 100%;
+        font-size: 30px;
+        padding: 10px;
+        
     }
     
     
+}
+
+.squad-list {
+    margin-bottom: 1vw;
+    .squad-list-group {
+       .squad-group-name {
+            color: $barcayellow;
+            font-weight: 800;
+            font-size: 2rem;
+            padding: 10px;
+       }
+       .squad-group-playerlist {
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr;
+           gap: 1vw;
+           .squad-group-player {
+                background: linear-gradient(90deg,#cd122d,#154284);
+                border-radius: 10px;
+                margin: 0 10px;
+                display: flex;
+                flex-direction: row;
+                .player-img {
+                    width: 60%;
+                }
+                .player-info {
+                    color:  white;
+                    font-weight: 800;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width : 100%;
+                    .player-name{
+                        padding-top: 1vw;
+                        font-size: 1.4vw;
+                    }
+                    .player-number {
+                        font-size: 4vw;
+                        color: $barcayellow;
+                        align-self: flex-end;
+                        padding-right: 1vw;
+                    }
+                }
+           }
+           
+       }
+    }
+}
+
+
+
+
+.squad-page {
+    padding: 0 10px;
+    border-radius: 10px;
+    .player-img-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        height: 100%;
+        .player-img {
+            position: absolute;
+            height: 90%;
+            bottom: 0;
+        }
+        .player-name {
+            align-self: flex-end;
+            font-weight: bold;
+            font-size: 6vw;
+            background: linear-gradient(90deg,#cd122d,#154284);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .player-info{
+            align-self: flex-end;
+            padding: 3vw;
+            .player-number {
+                text-align: end;
+                font-weight: bold;
+                font-size: 8vw;
+                color: $barcayellow;
+            }
+            .player-stats {
+                align-self: flex-end;
+                font-weight: bold;
+                font-size: 2vw;
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                .stat-name {
+                    margin: 0 10px;
+                    .stat-num {
+                        text-align: center;
+                        color: $barcayellow;
+                    }
+                }
+            }
+        }
+        
+    }
 }

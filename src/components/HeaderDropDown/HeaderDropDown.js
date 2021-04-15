@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 const HeaderDropDownWrapper = styled.div`
@@ -20,29 +21,23 @@ const HeaderDropDownListWrapper = styled.div`
     font-weight: normal;
 `;
 
-const HeaderDropDown = ({type}) => {
-     const [droplist, setDroplist] = useState([]);
-     useEffect( () => {
-        if (type === 0 ){
-            setDroplist(['GoalKeepers', 'Defenders', 'Midfielders', 'Fowards']);
-        }
-        else if (type === 1) {
-            setDroplist(['Previous', 'Upcoming']);
-        }
-        else if (type === 2) {
-            setDroplist(['20/21 Winter', '20/21 Summer', '19/20 Winter', '19/20 Summer']);
-        }
-        else if (type === 3) {
-            setDroplist(['News', 'SNS', 'Reporters']);
-        }
-     }, [])
+const HeaderDropDown = ({ type }) => {
+    const droplist = [
+        ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'],
+        ['Previous', 'Upcoming'],
+        ['20/21 Winter', '20/21 Summer', '19/20 Winter', '19/20 Summer'],
+        ['News', 'SNS', 'Reporters']
+    ];
+    const link = ['/squadList/', '/ee/', '/ee/', '/ee/'];
     return (
         <HeaderDropDownWrapper className="content">
             {
-                droplist.map(item => (
-                    <HeaderDropDownListWrapper className="link" key={item}>
-                        {item}
-                    </HeaderDropDownListWrapper>
+                droplist[type].map(item => (
+                    <Link to={`${link[type]}${item}`}>
+                        <HeaderDropDownListWrapper className="link" key={item}>
+                            {item}
+                        </HeaderDropDownListWrapper>
+                    </Link>
                 ))
             }
         </HeaderDropDownWrapper>
