@@ -6,11 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './modules';
+import axios from 'axios';
+
+const store = createStore(rootReducer);
+axios.get('http://localhost:5000/players').then((res) => store.dispatch({ type: 'squad/GET_SQUAD', payload: res.data }));
+
+
 ReactDOM.render(
   <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
   </Router>,
   document.getElementById('root')
 );

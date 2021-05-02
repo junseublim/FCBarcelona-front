@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import messi from '../../static/img/messi.webp'
 import axios from 'axios';
 import { Link, Route, Router, useParams, Switch, useRouteMatch } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 const SquadListGroupItem = ({ player }) => {
 
     return (
@@ -17,21 +19,24 @@ const SquadListGroupItem = ({ player }) => {
     )
 }
 
-const SquadListGroup = ({ group, groupName }) => {
+const SquadListGroup = ({ groupName }) => {
+    const { squad } = useSelector(state => state.squad);
+    console.log(squad, groupName);
     return (
         <div className="squad-list-group">
             <div className="squad-group-name">{groupName}</div>
             <div className="squad-group-playerlist">
-                {group.map(player => (
+                {squad && groupName && squad[groupName].map(player => (
                     <SquadListGroupItem player={player} />
                 ))}
             </div>
         </div>
     )
 }
-const Squad = ({ players }) => {
+const Squad = () => {
     let { group, number } = useParams();
-    let groupList = players[group];
+    const { squad } = useSelector(state => state.squad);
+    let groupList = squad[group];
     let player = groupList.find(p => p.number == number);
     return (
         <div className="squad-page">
@@ -50,15 +55,16 @@ const Squad = ({ players }) => {
         </div>
     )
 }
-const SquadList = ({ players }) => {
+
+const SquadList = () => {
     let { group } = useParams();
-    console.log(group);
-    console.log(players)
+    const { squad } = useSelector(state => state.squad);
+    console.log(squad);
     return (
         <div className="squad-list">
-            {group && <SquadListGroup group={players[group]} groupName={group} key={0} />}
-            {!group && players && Object.keys(players).map((item, i) => (
-                <SquadListGroup group={players[item]} groupName={item} key={i} />
+            {group && <SquadListGroup groupName={group} key={0} />}
+            {!group && Object.keys(squad).map((item, i) => (
+                <SquadListGroup group={squad[item]} groupName={item} key={i} />
             ))}
         </div>
     )
@@ -66,26 +72,17 @@ const SquadList = ({ players }) => {
 
 const SquadListPage = () => {
     let match = useRouteMatch();
-
-    const [players, setPlayers] = useState({});
-    useEffect(async () => {
-        console.log('useEffect');
-        await axios.get('http://localhost:5000/players').then((res) => {
-            setPlayers(res.data);
-            console.log(res.data);
-        });
-    }, []);
     return (
         <Switch>
             <Route path={`${match.path}/:group/:number`}>
-                <Squad players={players} />
+                <Squad />
             </Route>
             <Route path={`${match.path}/:group`}>
-                <SquadList players={players} />
+                <SquadList />
             </Route>
             <Route exact path={`${match.path}/`}>
                 {console.log('exact')}
-                <SquadList players={players} />
+                <SquadList />
             </Route>
         </Switch>
     )
