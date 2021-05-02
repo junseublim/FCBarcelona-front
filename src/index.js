@@ -14,7 +14,7 @@ import axios from 'axios';
 
 const store = createStore(rootReducer);
 axios.get('http://localhost:5000/players').then((res) => store.dispatch({ type: 'squad/GET_SQUAD', payload: res.data }));
-
+axios.get('http://localhost:5000/matches').then((res) => store.dispatch({ type: 'match/GET_MATCH', payload: res.data }));
 
 ReactDOM.render(
   <Router>

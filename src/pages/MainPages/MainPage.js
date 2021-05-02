@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import SquadListPage from './SquadListPage';
+import MatchPage from './MatchPage';
 import main_img from '../../static/img/main_img.webp'
 const MainPage = () => {
     return (
@@ -20,6 +21,9 @@ const MainPage = () => {
             </Route>
             <Route path="/squadList">
                 <SquadListPage></SquadListPage>
+            </Route>
+            <Route path="/match">
+                <MatchPage></MatchPage>
             </Route>
         </Switch>
     )

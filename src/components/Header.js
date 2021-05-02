@@ -36,9 +36,11 @@ const Header = () => {
             </div>
 
             <div>
-                <span>
-                    MATCHES
-                </span>
+                <Link to="/match">
+                    <span>
+                        MATCHES
+                    </span>
+                </Link>
                 <HeaderDropDown type={1} />
             </div>
             <div>
