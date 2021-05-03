@@ -9,13 +9,13 @@ import {
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './modules';
-import axios from 'axios';
+import rootReducer, { rootSaga } from './modules';
+import createSagaMiddleware from 'redux-saga'
 
-const store = createStore(rootReducer);
-axios.get('http://localhost:5000/players').then((res) => store.dispatch({ type: 'squad/GET_SQUAD', payload: res.data }));
-axios.get('http://localhost:5000/matches').then((res) => store.dispatch({ type: 'match/GET_MATCH', payload: res.data }));
-axios.get('http://localhost:5000/teams').then((res) => store.dispatch({ type: 'teams/GET_TEAMS', payload: res.data }));
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
+
 
 ReactDOM.render(
   <Router>

@@ -10,9 +10,18 @@ import {
 import MainPage from './pages/MainPages/MainPage';
 import { useEffect, useContext } from 'react';
 import ThemeContext, { ThemeProvider } from './contexts/theme';
-
+import { useDispatch } from 'react-redux';
+import { getSquad } from './modules/squad';
+import { getMatch } from './modules/match';
+import { getTeams } from './modules/teams';
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSquad());
+    dispatch(getMatch());
+    dispatch(getTeams());
+  }, [dispatch]);
 
   return (
     <ThemeProvider>

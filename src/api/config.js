@@ -1,1 +1,3 @@
-dev_uri = "http://localhost:3001";
+export const dev_uri = "http://localhost:5000";
+
+

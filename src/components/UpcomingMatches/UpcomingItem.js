@@ -39,23 +39,29 @@ const VSWrapper = styled.div`
 
 const UpcomingItem = ({ match }) => {
     const { teams } = useSelector(state => state.teams);
-    const team = teams.find(item => item._id === match.team);
+    const team = teams.data.find(item => item._id === match.team);
     return (
         <UpcomingItemWrapper>
-            <Team>
-                <img src={fcb_logo} alt="" />
-                <div>FC Barcelona</div>
-            </Team>
-            <VSWrapper>VS</VSWrapper>
-            <Team>
-                <img src={team.image} alt="" />
-                <div>{team.name}</div>
-            </Team>
-            <MatchInfo>
-                <div>{match.location}</div>
-                <div>{match.date.slice(0, 10)}</div>
-                <div>{match.type}</div>
-            </MatchInfo>
+            {
+                team && (
+                    <>
+                        <Team>
+                            <img src={fcb_logo} alt="" />
+                            <div>FC Barcelona</div>
+                        </Team>
+                        <VSWrapper>VS</VSWrapper>
+                        <Team>
+                            <img src={team.image} alt="" />
+                            <div>{team.name}</div>
+                        </Team>
+                        <MatchInfo>
+                            <div>{match.location}</div>
+                            <div>{match.date.slice(0, 10)}</div>
+                            <div>{match.type}</div>
+                        </MatchInfo>
+                    </>
+                )
+            }
         </UpcomingItemWrapper>
     )
 }

@@ -1,18 +1,69 @@
+import { get_squad } from '../api/api';
+import { call, put, takeEvery } from 'redux-saga/effects'
+
 const GET_SQUAD = "squad/GET_SQUAD";
+const GET_SQUAD_SUCCESS = "squad/GET_SQUAD_SUCCESS";
+const GET_SQUAD_ERROR = "squad/GET_SQUAD_ERROR";
 
 export const getSquad = () => ({ type: GET_SQUAD });
 
+
+function* getSquadSaga() {
+    try {
+        const squad = yield call(get_squad);
+        yield put({
+            type: GET_SQUAD_SUCCESS,
+            payload: squad
+        });
+    } catch (e) {
+        yield put({
+            type: GET_SQUAD_ERROR,
+            error: true,
+            payload: e
+        });
+    }
+}
+
+export function* squadSaga() {
+    yield takeEvery(GET_SQUAD, getSquadSaga);
+}
+
 const initialState = {
-    squad: {}
+    squad: {
+        data: {},
+        loading: false,
+        error: null
+    }
 };
 
 export default function squad(state = initialState, action) {
     switch (action.type) {
         case GET_SQUAD: {
-            console.log(action);
             return {
                 ...state,
-                squad: action.payload
+                squad: {
+                    ...state.squad,
+                    loading: true,
+                }
+            }
+        }
+        case GET_SQUAD_SUCCESS: {
+            console.log("payload", action.payload);
+            return {
+                ...state,
+                squad: {
+                    ...state.squad,
+                    data: action.payload,
+                }
+            }
+        }
+        case GET_SQUAD_ERROR: {
+            return {
+                ...state,
+                squad: {
+                    ...state.squad,
+                    error: action.payload,
+                }
             }
         }
         default: {

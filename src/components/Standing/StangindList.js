@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 const StandingList = () => {
     const { teams } = useSelector(state => state.teams);
-    console.log(teams)
     return (
 
         <div className="standing-list">
@@ -18,7 +17,7 @@ const StandingList = () => {
                 <div>승점</div>
             </div>
             {
-                teams.map(team => {
+                teams.data.map(team => {
                     return (
                         <div key={team.rank} className="standing-item">
                             <div>{team.rank}</div>

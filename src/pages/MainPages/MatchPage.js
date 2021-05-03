@@ -10,13 +10,13 @@ const MatchPage = () => {
     return (
         <div className="match-table">
             {
-                match.map((item) => (
+                match.data.map((item) => (
                     <div className="match-box">
                         <div className="match-team">
-                            <img src={teams.find(team => team._id === item.team).image} alt="" />
+                            <img src={teams.data.find(team => team._id === item.team).image} alt="" />
                         </div>
                         <div className="match-info">
-                            <div className="team-name">{teams.find(team => team._id === item.team).name}</div>
+                            <div className="team-name">{teams.data.find(team => team._id === item.team).name}</div>
                             <div className="match-detail">
                                 <span>{item.date.slice(0, 10)}</span>
                                 <span>{item.location}</span>

@@ -21,13 +21,12 @@ const SquadListGroupItem = ({ player }) => {
 
 const SquadListGroup = ({ groupName }) => {
     const { squad } = useSelector(state => state.squad);
-    console.log(squad, groupName);
     return (
         <div className="squad-list-group">
             <div className="squad-group-name">{groupName}</div>
             <div className="squad-group-playerlist">
-                {squad && groupName && squad[groupName].map(player => (
-                    <SquadListGroupItem player={player} />
+                {squad.data && groupName && squad.data[groupName].map(player => (
+                    <SquadListGroupItem player={player} key={player.number} />
                 ))}
             </div>
         </div>
@@ -36,7 +35,8 @@ const SquadListGroup = ({ groupName }) => {
 const Squad = () => {
     let { group, number } = useParams();
     const { squad } = useSelector(state => state.squad);
-    let groupList = squad[group];
+
+    let groupList = squad.data[group];
     let player = groupList.find(p => p.number == number);
     return (
         <div className="squad-page">
@@ -59,12 +59,11 @@ const Squad = () => {
 const SquadList = () => {
     let { group } = useParams();
     const { squad } = useSelector(state => state.squad);
-    console.log(squad);
     return (
         <div className="squad-list">
             {group && <SquadListGroup groupName={group} key={0} />}
-            {!group && Object.keys(squad).map((item, i) => (
-                <SquadListGroup group={squad[item]} groupName={item} key={i} />
+            {!group && Object.keys(squad.data).map((item, i) => (
+                <SquadListGroup group={squad.data[item]} groupName={item} key={i} />
             ))}
         </div>
     )
