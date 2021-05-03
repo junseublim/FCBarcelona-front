@@ -261,8 +261,8 @@ html {
     div {
         display:flex;
         flex-direction: row;
-        margin-right: 0.5rem;
-        justify-self: center;
+        margin: 0 0.5rem;
+        justify-self: flex-start;
         align-items: center;
         img {
             width: 1.4rem;
@@ -419,9 +419,9 @@ html {
     justify-content: flex-start;
     align-items: flex-start;
     .match-box {
-        margin-top: 20px;
+        margin-top: 5%;
         margin-left: 15%;
-        height: 10vw;
+        height: 30%;
         width: 70%;
         border-bottom: 2px solid $barcayellow;
         display: flex;
@@ -431,22 +431,23 @@ html {
         .match-team {
             img {
                 display: block;
-                width: 70px;
+                width: 6vw;
             }
-            padding: 20px;
+            padding: 2vw;
             
         }
         .match-info {
             border-left: 2px solid $barcayellow;
-            padding: 20px;
+            padding: 1.5vw;
             .team-name {
-                font-size: 2rem;
                 font-weight: 200;
+                font-size: 1.5rem;
             }
             .match-detail {
-                font-size: 1.2rem;
+                display: flex;
+                flex-direction: column;
                 span {
-                    margin-right: 10px;
+                    font-size: 1.2rem;
                 }
             }
         }
