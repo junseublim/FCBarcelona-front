@@ -21,6 +21,8 @@ const SquadListGroupItem = ({ player }) => {
 
 const SquadListGroup = ({ groupName }) => {
     const { squad } = useSelector(state => state.squad);
+    if (squad.loading) return null;
+
     return (
         <div className="squad-list-group">
             <div className="squad-group-name">{groupName}</div>
@@ -35,6 +37,8 @@ const SquadListGroup = ({ groupName }) => {
 const Squad = () => {
     let { group, number } = useParams();
     const { squad } = useSelector(state => state.squad);
+
+    if (squad.loading) return null;
 
     let groupList = squad.data[group];
     let player = groupList.find(p => p.number == number);
@@ -59,6 +63,8 @@ const Squad = () => {
 const SquadList = () => {
     let { group } = useParams();
     const { squad } = useSelector(state => state.squad);
+    if (squad.loading) return null;
+
     return (
         <div className="squad-list">
             {group && <SquadListGroup groupName={group} key={0} />}

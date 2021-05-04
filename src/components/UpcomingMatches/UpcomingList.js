@@ -10,7 +10,8 @@ const UpcomingListWrapper = styled.div`
 
 const UpcomingList = () => {
     const { match } = useSelector(state => state.match);
-    console.log(match);
+    if (match.loading) return null;
+
     return (
         <UpcomingListWrapper>
             {match.data.length && match.data.map(item => (

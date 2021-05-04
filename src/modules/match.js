@@ -31,7 +31,7 @@ export function* matchSaga() {
 const initialState = {
     match: {
         data: [],
-        loading: false,
+        loading: true,
         error: null,
     }
 };
@@ -43,7 +43,7 @@ export default function match(state = initialState, action) {
                 ...state,
                 match: {
                     ...state.match,
-                    loading: true,
+
                 }
             }
         }
@@ -53,6 +53,7 @@ export default function match(state = initialState, action) {
 
                 match: {
                     ...state.match,
+                    loading: false,
                     data: action.payload,
                 }
             }
@@ -62,6 +63,7 @@ export default function match(state = initialState, action) {
                 ...state,
                 match: {
                     ...state.match,
+                    loading: false,
                     error: action.payload,
                 }
             }

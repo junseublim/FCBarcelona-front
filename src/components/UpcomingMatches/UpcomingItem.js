@@ -15,10 +15,10 @@ const UpcomingItemWrapper = styled.div`
 const Team = styled.div`
     display: flex;
     flex-direction: column;
-    width: 5rem;
+    width: 6rem;
     justify-content: center;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     img {
         width: 3rem;
     }
@@ -29,7 +29,7 @@ const MatchInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     width:100%;
     
 `;
@@ -39,6 +39,8 @@ const VSWrapper = styled.div`
 
 const UpcomingItem = ({ match }) => {
     const { teams } = useSelector(state => state.teams);
+    if (teams.loading) return null;
+
     const team = teams.data.find(item => item._id === match.team);
     return (
         <UpcomingItemWrapper>

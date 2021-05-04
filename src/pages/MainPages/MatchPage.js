@@ -6,7 +6,7 @@ const MatchPage = () => {
     const { match } = useSelector(state => state.match);
     const { teams } = useSelector(state => state.teams);
 
-    console.log(match);
+    if (match.loading || teams.loading) return null;
     return (
         <div className="match-table">
             {

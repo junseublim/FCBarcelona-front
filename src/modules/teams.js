@@ -31,7 +31,7 @@ export function* teamSaga() {
 const initialState = {
     teams: {
         data: [],
-        loading: false,
+        loading: true,
         error: null
     }
 };
@@ -43,7 +43,6 @@ export default function teams(state = initialState, action) {
                 ...state,
                 teams: {
                     ...state.teams,
-                    loading: true,
                 }
             }
         }
@@ -53,6 +52,7 @@ export default function teams(state = initialState, action) {
                 ...state,
                 teams: {
                     ...state.teams,
+                    loading: false,
                     data: action.payload,
                 }
             }
@@ -62,6 +62,7 @@ export default function teams(state = initialState, action) {
                 ...state,
                 teams: {
                     ...state.teams,
+                    loading: false,
                     error: action.payload,
                 }
             }

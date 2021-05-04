@@ -31,7 +31,7 @@ export function* squadSaga() {
 const initialState = {
     squad: {
         data: {},
-        loading: false,
+        loading: true,
         error: null
     }
 };
@@ -43,16 +43,16 @@ export default function squad(state = initialState, action) {
                 ...state,
                 squad: {
                     ...state.squad,
-                    loading: true,
                 }
             }
         }
         case GET_SQUAD_SUCCESS: {
-            console.log("payload", action.payload);
+
             return {
                 ...state,
                 squad: {
                     ...state.squad,
+                    loading: false,
                     data: action.payload,
                 }
             }
@@ -62,6 +62,7 @@ export default function squad(state = initialState, action) {
                 ...state,
                 squad: {
                     ...state.squad,
+                    loading: false,
                     error: action.payload,
                 }
             }
