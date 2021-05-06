@@ -20,24 +20,55 @@ const NewsPage = () => {
 
     }
     return (
-        <div className="main-view">
-            <div className="move-btn" onClick={() => moveNews(selected - 1)}> <ArrowBackIosIcon style={{ fontSize: 80 }} /> </div>
-            <a className="news-container" href={news.data[selected].link}>
-                <div className="img-wrapper">
-                    <img src={news.data[selected].thumbnail} alt="" className="main-img" />
-                </div>
-                <div className="article">
-                    <div className="article-title">
-                        {news.data[selected].title}
-                    </div>
-                    <div className="article-summary">
-                        {news.data[selected].summary}
-                    </div>
-                </div>
-            </a>
-            <div className="move-btn" onClick={() => moveNews(selected + 1)}> <ArrowForwardIosIcon style={{ fontSize: 80 }} /> </div>
-        </div>
+        <div className="main-container">
+            {selected > 0 && <div className="move-btn" onClick={() => moveNews(selected - 1)}> <ArrowBackIosIcon style={{ fontSize: 80 }} /> </div>}
+            <div className="main-view">
 
+                {selected > 0 && <a className="news-container news-prev" href={news.data[selected - 1].link}>
+                    <div className="img-wrapper">
+                        <img src={news.data[selected - 1].thumbnail} alt="" className="main-img" />
+                    </div>
+                    <div className="article">
+                        <div className="article-title">
+                            {news.data[selected - 1].title}
+                        </div>
+                        <div className="article-summary">
+                            {news.data[selected - 1].summary}
+                        </div>
+                    </div>
+                </a>
+                }
+                <a className="news-container" href={news.data[selected].link}>
+                    <div className="img-wrapper">
+                        <img src={news.data[selected].thumbnail} alt="" className="main-img" />
+                    </div>
+                    <div className="article">
+                        <div className="article-title">
+                            {news.data[selected].title}
+                        </div>
+                        <div className="article-summary">
+                            {news.data[selected].summary}
+                        </div>
+                    </div>
+                </a>
+                {selected < news.data.length - 1 && <a className="news-container news-next" href={news.data[selected + 1].link}>
+                    <div className="img-wrapper">
+                        <img src={news.data[selected + 1].thumbnail} alt="" className="main-img" />
+                    </div>
+                    <div className="article">
+                        <div className="article-title">
+                            {news.data[selected + 1].title}
+                        </div>
+                        <div className="article-summary">
+                            {news.data[selected + 1].summary}
+                        </div>
+                    </div>
+                </a>
+                }
+
+            </div>
+            {selected < news.data.length - 1 && <div className="move-btn" onClick={() => moveNews(selected + 1)}> <ArrowForwardIosIcon style={{ fontSize: 80 }} /> </div>}
+        </div>
 
     )
 }

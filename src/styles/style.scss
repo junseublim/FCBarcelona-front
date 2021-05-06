@@ -273,56 +273,101 @@ html {
     }
 }
 
-.main-view{
+.main-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     .move-btn {
-        font-size: 8rem;
-        color: $barcayellow
-    }
-    .news-container {
+            font-size: 8rem;
+            color: $barcayellow
+        }
+    .main-view{
         display: flex;
-        flex-direction: column;
-        width: 30rem;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin: 3vw 0;
-        .img-wrapper {
-            .main-img {
-                width: 30rem;
-                display: block;   
-                border-top-right-radius: 5%;
-                border-top-left-radius: 5%;
-            }
-        }
-        .article {
+        width: 60rem;
+        position: relative;
+        .news-container {
+            display: flex;
+            flex-direction: column;
             width: 30rem;
-            transition: all linear 0.2s;
-            background: var(--background-color);
-            border-bottom-right-radius: 5%;
-            border-bottom-left-radius: 5%;
+            justify-content: center;
+            align-items: center;
+            margin: 3vw 0;
+            transition: width 0.3s, height 0.3s ;
+            box-shadow: 10px 10px 10px grey;
+            border-radius: 5%;
+            &.news-next {
+                position: absolute;
+                right: 0;
+                z-index: -1;
+                width: 25rem;
+                filter: brightness(70%);
+            }
+            &.news-prev {
+                position: absolute;
+                left:0;
+                z-index: -1;
+                width: 25rem;
+                filter: brightness(70%);
+            }
+            &:hover {
+                width: 30.3rem;
+            }
+            .img-wrapper {
+                .main-img {
+                    width: 100%;
+                    display: block;   
+                    border-top-right-radius: 5%;
+                    border-top-left-radius: 5%;
+                }
+            }
+            .article {
+                width: 100%;
+                transition: all linear 0.2s;
+                background: var(--background-color);
+                border-bottom-right-radius: 5%;
+                border-bottom-left-radius: 5%;
+                
+                
+            }
+            .article-title {
+                background: linear-gradient(90deg,#cd122d,#154284);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 800;
+                font-size: 3rem;
+                padding: 10px;
+                padding-bottom: 0;
+                line-height: 3rem;
+                height: 6rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* number of lines to show */
+                -webkit-box-orient: vertical;
+            }
+            .article-summary {
+                color : var(--text-color);
+                font-weight: 800;
+                font-size: 1.2rem;
+                padding: 10px;
+                padding-bottom: 0;
+                line-height: 2rem;
+                height: 6rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* number of lines to show */
+                -webkit-box-orient: vertical;
+            }
+            
+            
         }
-        .article-title {
-            background: linear-gradient(90deg,#cd122d,#154284);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            font-size: 3rem;
-            padding: 10px;
-        }
-        .article-summary {
-            color : var(--text-color);
-            font-weight: 800;
-            font-size: 1.2rem;
-            padding: 10px;
-        }
-        
-        
     }
 }
-
 .squad-list {
     margin-bottom: 1vw;
     .squad-list-group {
