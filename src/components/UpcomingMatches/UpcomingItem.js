@@ -13,6 +13,7 @@ const UpcomingItemWrapper = styled.div`
 `;
 
 const Team = styled.div`
+    margin: auto;
     display: flex;
     flex-direction: column;
     width: 6rem;
