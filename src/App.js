@@ -32,7 +32,13 @@ function App() {
         <StandingList />
         <MainPage />
         <UpcomingList />
-        <div className="footer">E</div>
+        <div className="footer">
+          Copyright © junseublim
+          <br />
+          www.github.com/junseublim
+          <br />
+          junslim11@gmail.com
+        </div>
 
       </div>
     </ThemeProvider>
