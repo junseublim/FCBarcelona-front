@@ -19,7 +19,7 @@ const Team = styled.div`
     width: 6rem;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 12px;
     img {
         width: 3rem;
     }
@@ -30,7 +30,7 @@ const MatchInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1rem;
+    font-size: 12px;
     width:100%;
     
 `;
