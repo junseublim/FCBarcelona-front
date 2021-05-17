@@ -13,8 +13,14 @@ const MainPage = () => {
             <Route path="/squadList">
                 <SquadListPage></SquadListPage>
             </Route>
+            <Route path="/match/previous">
+                <MatchPage isDone={true}></MatchPage>
+            </Route>
+            <Route path="/match/upcoming">
+                <MatchPage isDone={false}></MatchPage>
+            </Route>
             <Route path="/match">
-                <MatchPage></MatchPage>
+                <MatchPage isDone={undefined}></MatchPage>
             </Route>
         </Switch>
     )

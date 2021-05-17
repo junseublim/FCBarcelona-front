@@ -501,19 +501,28 @@ html {
         border-bottom: 0.1vw solid $barcayellow;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
+        .match-box-left {
+            display: flex;
+        }
+        .match-box-right {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $barcayellow;
+            margin-right: 60px;
+        }
         .match-team {
             img {
                 display: block;
-                width: 6vw;
+                width: 120px;
+                
             }
-            padding: 2vw;
-            
+            padding: 20px;
+            border-right: 0.1vw solid $barcayellow;
         }
         .match-info {
-            border-left: 0.1vw solid $barcayellow;
-            padding: 1.5vw;
+            padding: 20px;
             .team-name {
                 font-weight: 200;
                 font-size: 1.5rem;
