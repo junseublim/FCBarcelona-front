@@ -56,9 +56,11 @@ const Header = () => {
                 <HeaderDropDown type={1} />
             </div>
             <div>
-                <span>
-                    TRANSFERS
-                </span>
+                <Link to="/transfer">
+                    <span>
+                        TRANSFERS
+                    </span>
+                </Link>
                 <HeaderDropDown type={2} />
             </div>
             <div>

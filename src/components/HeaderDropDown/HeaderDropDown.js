@@ -28,7 +28,7 @@ const HeaderDropDown = ({ type }) => {
         ['20/21 Winter', '20/21 Summer', '19/20 Winter', '19/20 Summer'],
         ['News', 'SNS', 'Reporters']
     ];
-    const link = ['/squadList/', '/match/', '/ee/', '/ee/'];
+    const link = ['/squadList/', '/match/', '/tranfer/', '/ee/'];
     return (
         <HeaderDropDownWrapper className="content">
             {
