@@ -15,6 +15,7 @@ import { getSquad } from './modules/squad';
 import { getMatch } from './modules/match';
 import { getTeams } from './modules/teams';
 import { getNews } from './modules/news';
+import { getTransfers } from './modules/transfers';
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
     dispatch(getMatch());
     dispatch(getTeams());
     dispatch(getNews());
+    dispatch(getTransfers());
   }, [dispatch]);
 
   return (
