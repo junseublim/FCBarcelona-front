@@ -542,11 +542,6 @@ html {
 
 .transfer-wrapper {
     width: 100%;
-    .transfer-type {
-        font-weight: bold;
-        font-size: 30px;
-        margin: 10px 60px ;
-    }
     .transfer-list {
         width: 100%;
         display: flex;
@@ -562,6 +557,7 @@ html {
     border-radius: 5px;
     width: 70%;
     margin: 20px;
+    position: relative;
     .transfer-info {
         display: grid;
         grid-template: 1fr 1fr / 1fr 1fr;

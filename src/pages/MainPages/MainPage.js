@@ -23,6 +23,9 @@ const MainPage = () => {
             <Route path="/match">
                 <MatchPage isDone={undefined}></MatchPage>
             </Route>
+            <Route path="/transfer/:season1/:season2">
+                <TransferPage />
+            </Route>
             <Route path="/transfer">
                 <TransferPage />
             </Route>

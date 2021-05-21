@@ -25,10 +25,10 @@ const HeaderDropDown = ({ type }) => {
     const droplist = [
         ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'],
         ['Previous', 'Upcoming'],
-        ['20/21 Winter', '20/21 Summer', '19/20 Winter', '19/20 Summer'],
+        ['20-21/Winter', '20-21/Summer'],
         ['News', 'SNS', 'Reporters']
     ];
-    const link = ['/squadList/', '/match/', '/tranfer/', '/ee/'];
+    const link = ['/squadList/', '/match/', '/transfer/', '/ee/'];
     return (
         <HeaderDropDownWrapper className="content">
             {
