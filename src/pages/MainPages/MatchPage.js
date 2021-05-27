@@ -42,6 +42,9 @@ const MatchPage = ({ isDone }) => {
 
     return (
         <div className="match-table">
+            {!matchesToShow.length &&
+                <div className="no-match-to-show"> No match to show
+                </div>}
             {
                 matchesToShow.map((item) => (
                     <MatchItem item={item} key={item.date} />

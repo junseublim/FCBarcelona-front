@@ -64,9 +64,11 @@ const Header = () => {
                 <HeaderDropDown type={2} />
             </div>
             <div>
-                <span>
-                    NEWS
+                <Link to="/news">
+                    <span>
+                        NEWS
                 </span>
+                </Link>
                 <HeaderDropDown type={3} />
             </div>
 

@@ -29,6 +29,11 @@ const MainPage = () => {
             <Route path="/transfer">
                 <TransferPage />
             </Route>
+            <Route path="/news">
+                <div style={{ fontSize: 50, margin: "auto" }}>
+                    Currently in development
+                </div>
+            </Route>
         </Switch>
     )
 }
