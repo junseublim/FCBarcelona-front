@@ -86,7 +86,6 @@ const SquadListPage = () => {
                 <SquadList />
             </Route>
             <Route exact path={`${match.path}/`}>
-                {console.log('exact')}
                 <SquadList />
             </Route>
         </Switch>

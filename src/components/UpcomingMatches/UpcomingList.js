@@ -15,7 +15,7 @@ const UpcomingList = () => {
     return (
         <UpcomingListWrapper>
             {match.data.length && match.data.map(item => (
-                <UpcomingItem match={item} />
+                <UpcomingItem match={item} key={item.date} />
             ))}
 
         </UpcomingListWrapper>

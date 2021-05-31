@@ -33,7 +33,7 @@ const HeaderDropDown = ({ type }) => {
         <HeaderDropDownWrapper className="content">
             {
                 droplist[type].map(item => (
-                    <Link to={`${link[type]}${item}`}>
+                    <Link to={`${link[type]}${item}`} key={item}>
                         <HeaderDropDownListWrapper className="link" key={item}>
                             {item}
                         </HeaderDropDownListWrapper>

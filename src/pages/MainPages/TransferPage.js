@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import messi from '../../static/img/messi.webp';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -37,11 +36,10 @@ const TransferPage = () => {
         if (!season1) setTransferList(transfers.data);
         else {
             const season = season1.substr(0, 2) + '/' + season1.substr(3, 2) + ' ' + season2;
-            console.log(season)
             setTransferList(transfers.data.filter(item => item.season === season));
         }
 
-    }, [season1, season2]);
+    }, [season1, season2, transfers]);
     return (
         <div>
             <div className="transfer-wrapper">

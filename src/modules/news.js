@@ -8,10 +8,8 @@ const GET_NEWS_ERROR = "news/GET_NEWS_ERROR";
 export const getNews = () => ({ type: GET_NEWS });
 
 function* getNewsSaga() {
-    console.log('saga');
     try {
         const news = yield call(get_news);
-        console.log(news);
         yield put({
             type: GET_NEWS_SUCCESS,
             payload: news
@@ -48,7 +46,6 @@ export default function news(state = initialState, action) {
             }
         }
         case GET_NEWS_SUCCESS: {
-            console.log(action.payload)
             return {
                 ...state,
                 news: {

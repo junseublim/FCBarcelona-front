@@ -17,7 +17,6 @@ import { getTeams } from './modules/teams';
 import { getNews } from './modules/news';
 import { getTransfers } from './modules/transfers';
 function App() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSquad());

@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 const MatchItem = ({ item }) => {
     const { teams } = useSelector(state => state.teams);
+    if (!teams.data.length) return null;
     return (
         <div className="match-box">
             <div className="match-box-left">
@@ -34,11 +35,12 @@ const MatchPage = ({ isDone }) => {
     const { teams } = useSelector(state => state.teams);
     const [matchesToShow, setMatchesToShow] = useState([]);
     useEffect(() => {
+        console.log("isDone", isDone);
         if (isDone) setMatchesToShow(match.data.filter(item => item.isDone));
         else if (isDone === false) setMatchesToShow(match.data.filter(item => !item.isDone));
         else setMatchesToShow(match.data);
 
-    }, [isDone]);
+    }, [isDone, match, teams]);
 
     return (
         <div className="match-table">

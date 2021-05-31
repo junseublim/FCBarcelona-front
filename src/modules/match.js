@@ -8,10 +8,8 @@ const GET_MATCH_ERROR = "match/GET_MATCH_ERROR";
 export const getMatch = () => ({ type: GET_MATCH });
 
 function* getMatchSaga() {
-    console.log('saga');
     try {
         const match = yield call(get_matches);
-        console.log(match);
         yield put({
             type: GET_MATCH_SUCCESS,
             payload: match
