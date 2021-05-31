@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 const HeaderDropDownWrapper = styled.div`
-    visibilibity: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     position: absolute;
@@ -26,7 +25,7 @@ const HeaderDropDown = ({ type }) => {
         ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'],
         ['Previous', 'Upcoming'],
         ['20-21/Winter', '20-21/Summer'],
-        ['news', 'sns', 'reporters']
+        ['News', 'Sns', 'Reporters']
     ];
     const link = ['/squadList/', '/match/', '/transfer/', '/news/'];
     return (
