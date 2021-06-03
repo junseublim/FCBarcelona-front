@@ -19,16 +19,16 @@ const Header = () => {
             <div className="top-header">
                 <div>FOLLOW FC BARCELONA</div>
                 <div className="sns-list">
-                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link">
+                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link" target="_blank">
                         <InstagramIcon style={{ fontSize: 40 }} />
                     </a>
-                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link">
+                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link" target="_blank">
                         <FacebookIcon style={{ fontSize: 40 }} />
                     </a>
-                    <a href="https://twitter.com/fcbarcelona" className="sns-link">
+                    <a href="https://twitter.com/fcbarcelona" className="sns-link" target="_blank">
                         <TwitterIcon style={{ fontSize: 40 }} />
                     </a>
-                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link">
+                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link" target="_blank">
                         <YouTubeIcon style={{ fontSize: 40 }} />
                     </a>
                 </div>

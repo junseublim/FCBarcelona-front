@@ -205,7 +205,6 @@ html {
         grid-column: 3/4;
     }
     .footer{
-        background-color: var(--background-color);
         grid-column: 1/4;
         text-align: center;
     }
@@ -289,7 +288,6 @@ html {
     justify-content: center;
     align-items: center;
     .move-btn {
-        font-size: 8rem;
         color: $barcayellow;
     }
     .main-view{
@@ -325,6 +323,7 @@ html {
             }
             &:hover {
                 width: 28vw;
+                
             }
             .img-wrapper {
                 .main-img {

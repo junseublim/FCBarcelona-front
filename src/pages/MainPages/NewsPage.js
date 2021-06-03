@@ -24,7 +24,7 @@ const NewsPage = () => {
             {selected > 0 && <div className="move-btn" onClick={() => moveNews(selected - 1)}> <ArrowBackIosIcon style={{ fontSize: 80 }} /> </div>}
             <div className="main-view">
 
-                {selected > 0 && <a className="news-container news-prev" href={news.data[selected - 1].link}>
+                {selected > 0 && <a className="news-container news-prev" href={news.data[selected - 1].link} >
                     <div className="img-wrapper">
                         <img src={news.data[selected - 1].thumbnail} alt="" className="main-img" />
                     </div>
@@ -38,7 +38,7 @@ const NewsPage = () => {
                     </div>
                 </a>
                 }
-                <a className="news-container" href={news.data[selected].link}>
+                <a className="news-container" href={news.data[selected].link} target="_blank">
                     <div className="img-wrapper">
                         <img src={news.data[selected].thumbnail} alt="" className="main-img" />
                     </div>

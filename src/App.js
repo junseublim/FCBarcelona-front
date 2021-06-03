@@ -1,5 +1,6 @@
 import './styles/style.scss';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import StandingList from './components/Standing/StangindList';
 import UpcomingList from './components/UpcomingMatches/UpcomingList';
 import {
@@ -33,14 +34,7 @@ function App() {
         <StandingList />
         <MainPage />
         <UpcomingList />
-        <div className="footer">
-          Copyright © junseublim
-          <br />
-          www.github.com/junseublim
-          <br />
-          junslim11@gmail.com
-        </div>
-
+        <Footer />
       </div>
     </ThemeProvider>
   );

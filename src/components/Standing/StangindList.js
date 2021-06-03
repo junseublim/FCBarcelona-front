@@ -4,6 +4,20 @@ import { useSelector } from 'react-redux';
 
 const StandingList = () => {
     const { teams } = useSelector(state => state.teams);
+    const [mql, setMql] = useState(window.matchMedia('(max-width: 1355px)'));
+    useEffect(() => {
+        function debounce(timeout = 300) {
+            let timer;
+            return () => {
+                clearTimeout(timer);
+                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log('debounce'); }, timeout);
+            };
+        }
+        const resized = debounce();
+        window.addEventListener("resize", resized);
+        console.log('added event lsitenr')
+    }, []);
+
     return (
 
         <div className="standing-list">
@@ -21,7 +35,7 @@ const StandingList = () => {
                     return (
                         <div key={team.rank} className="standing-item">
                             <div>{team.rank}</div>
-                            <div><img src={team.image} alt="" />{team.name}</div>
+                            <div>{!mql.matches && <img src={team.image} alt="" />}{team.name}</div>
                             <div>{team.played}</div>
                             <div>{team.win}</div>
                             <div>{team.draw}</div>
