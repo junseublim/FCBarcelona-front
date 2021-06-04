@@ -351,7 +351,7 @@ html {
                 padding: 10px;
                 padding-bottom: 0;
                 line-height: 2rem;
-                height: 4rem;
+                height: 4.2rem;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
@@ -447,6 +447,7 @@ html {
             position: absolute;
             height: 90%;
             bottom: 0;
+            z-index: -1;
         }
         .player-name {
             align-self: flex-end;
@@ -455,6 +456,7 @@ html {
             background: linear-gradient(90deg,#cd122d,#154284);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            z-index:-2;
         }
         .player-info{
             align-self: flex-end;

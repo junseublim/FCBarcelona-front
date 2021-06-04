@@ -10,25 +10,24 @@ const StandingList = () => {
             let timer;
             return () => {
                 clearTimeout(timer);
-                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log('debounce'); }, timeout);
+                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); }, timeout);
             };
         }
         const resized = debounce();
         window.addEventListener("resize", resized);
-        console.log('added event lsitenr')
     }, []);
 
     return (
 
         <div className="standing-list">
             <div className="standing-header">
-                <div>순위</div>
-                <div>팀</div>
-                <div>경기</div>
-                <div>승</div>
-                <div>무</div>
-                <div>패</div>
-                <div>승점</div>
+                <div>Rank</div>
+                <div>Team</div>
+                <div>PL</div>
+                <div>W</div>
+                <div>D</div>
+                <div>L</div>
+                <div>P</div>
             </div>
             {
                 teams.data.map(team => {
