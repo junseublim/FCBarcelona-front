@@ -8,6 +8,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 const Header = () => {
+    let iconSize = 30;
     return (
         <div className="header">
             <Link to="/">
@@ -19,17 +20,17 @@ const Header = () => {
             <div className="top-header">
                 <div>FOLLOW FC BARCELONA</div>
                 <div className="sns-list">
-                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link">
-                        <InstagramIcon style={{ fontSize: 40 }} />
+                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link" target="_blank">
+                        <InstagramIcon style={{ fontSize: iconSize }} />
                     </a>
-                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link">
-                        <FacebookIcon style={{ fontSize: 40 }} />
+                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link" target="_blank">
+                        <FacebookIcon style={{ fontSize: iconSize }} />
                     </a>
-                    <a href="https://twitter.com/fcbarcelona" className="sns-link">
-                        <TwitterIcon style={{ fontSize: 40 }} />
+                    <a href="https://twitter.com/fcbarcelona" className="sns-link" target="_blank">
+                        <TwitterIcon style={{ fontSize: iconSize }} />
                     </a>
-                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link">
-                        <YouTubeIcon style={{ fontSize: 40 }} />
+                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link" target="_blank">
+                        <YouTubeIcon style={{ fontSize: iconSize }} />
                     </a>
                 </div>
                 <div className="darkmode">

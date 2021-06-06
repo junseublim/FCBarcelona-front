@@ -35,7 +35,6 @@ const MatchPage = ({ isDone }) => {
     const { teams } = useSelector(state => state.teams);
     const [matchesToShow, setMatchesToShow] = useState([]);
     useEffect(() => {
-        console.log("isDone", isDone);
         if (isDone) setMatchesToShow(match.data.filter(item => item.isDone));
         else if (isDone === false) setMatchesToShow(match.data.filter(item => !item.isDone));
         else setMatchesToShow(match.data);

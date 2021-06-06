@@ -86,7 +86,7 @@ html {
     }
 }
 :root {
-    --background-color: white;
+    --background-color: #fafafa;
     --text-color: #21125e;
     --sub-color: #2748aa;
     --border-color: #ddd;
@@ -109,6 +109,7 @@ html {
     width: 100vw;
     .header{
         width: 100vw;
+        margin-bottom: 1rem;
         color: var(--sub-color);
         grid-column: 1/4;
         display: grid;
@@ -126,11 +127,11 @@ html {
                 color: inherit;
             }
             display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
+            grid-template-columns: 1fr 1fr 3fr;
             justify-content: start;
             align-items: center;
             border-bottom: none;
-            font-size: 1.5rem;
+            font-size: 1rem;
             .sns-list {
                 display: flex;
                 flex-direction: row;
@@ -139,7 +140,7 @@ html {
                     margin-left: 0.5rem;
                 }
                 img {
-                    width: 1.5rem;
+                    width: 1rem;
                 }
             }
         }
@@ -147,7 +148,7 @@ html {
         > div, >a {
             border: solid  1px var(--border-color);
             border-right: none;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
             text-align: center;
             position: relative;
@@ -155,7 +156,7 @@ html {
             span {
                 display: block;
                 height: inherit;
-                padding: 1rem;
+                padding: 0.5rem;
             }
             &:hover {
                 cursor: pointer;
@@ -205,7 +206,6 @@ html {
         grid-column: 3/4;
     }
     .footer{
-        background-color: var(--background-color);
         grid-column: 1/4;
         text-align: center;
     }
@@ -218,12 +218,14 @@ html {
     justify-content: flex-end;
     align-items: center;
     color: var(--text-color);
+    margin-right: 1rem;
     > span {
         font-size: 1rem;
     }
     .toggle-btn-wrap {
         width: 4rem;
         height: 1.4rem;
+        
         background-color: $barcared;
         border-radius: 0.8rem;
         display: flex;
@@ -250,10 +252,11 @@ html {
 
 
 .standing-list {
+
     display:flex;
     flex-direction: column;
     font-size: 12px;
-    padding: 1px;
+    margin: 10px;
     .standing-header {
         display:grid;
         grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr 1fr;
@@ -266,20 +269,25 @@ html {
     }
     .standing-item {
         display:grid;
-    
-    grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr 1fr;
-    div {
-        display:flex;
-        flex-direction: row;
-        margin: 0 0.5rem;
-        justify-self: flex-start;
-        align-items: center;
-        img {
-            width: 1.4rem;
-            margin-right: 0.3rem;
+        grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr 1fr;
+        div {
+            display:flex;
+            flex-direction: row;
+            margin: 0 0.5rem;
+            justify-self: center;
+            align-items: center;
+            &.standing-item-team {
+                justify-self: flex-start;
+                img {
+                    margin-right: 0.5rem;
+                }
+            }
+            img {
+                width: 1.4rem;
+                margin-right: 0.3rem;
+            }
         }
-    }
-    margin-top: 0.3rem;
+        margin-top: 0.3rem;
     }
 }
 
@@ -289,7 +297,6 @@ html {
     justify-content: center;
     align-items: center;
     .move-btn {
-        font-size: 8rem;
         color: $barcayellow;
     }
     .main-view{
@@ -325,6 +332,7 @@ html {
             }
             &:hover {
                 width: 28vw;
+                
             }
             .img-wrapper {
                 .main-img {
@@ -352,7 +360,7 @@ html {
                 padding: 10px;
                 padding-bottom: 0;
                 line-height: 2rem;
-                height: 4rem;
+                height: 4.2rem;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
@@ -448,6 +456,7 @@ html {
             position: absolute;
             height: 90%;
             bottom: 0;
+            z-index: -1;
         }
         .player-name {
             align-self: flex-end;
@@ -456,6 +465,7 @@ html {
             background: linear-gradient(90deg,#cd122d,#154284);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            z-index:-2;
         }
         .player-info{
             align-self: flex-end;

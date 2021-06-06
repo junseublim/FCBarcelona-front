@@ -1,8 +1,10 @@
-import { uri } from "./config.js";
 import axios from 'axios';
 
-export const get_squad = () => axios.get(`${uri}/players`).then((res) => res.data);
-export const get_matches = () => axios.get(`${uri}/matches`).then((res) => res.data);
-export const get_teams = () => axios.get(`${uri}/teams`).then((res) => res.data);
-export const get_news = () => axios.get(`${uri}/news`).then((res) => res.data);
-export const get_transfers = () => axios.get(`${uri}/transfers`).then((res) => res.data);
+
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/' : 'http://13.209.66.252';
+
+export const get_squad = () => axios.get(`/players`).then((res) => res.data);
+export const get_matches = () => axios.get(`/matches`).then((res) => res.data);
+export const get_teams = () => axios.get(`/teams`).then((res) => res.data);
+export const get_news = () => axios.get(`/news`).then((res) => res.data);
+export const get_transfers = () => axios.get(`/transfers`).then((res) => res.data);
