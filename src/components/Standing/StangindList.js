@@ -10,7 +10,7 @@ const StandingList = () => {
             let timer;
             return () => {
                 clearTimeout(timer);
-                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); }, timeout);
+                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log("resize"); }, timeout);
             };
         }
         const resized = debounce();
@@ -34,7 +34,7 @@ const StandingList = () => {
                     return (
                         <div key={team.rank} className="standing-item">
                             <div>{team.rank}</div>
-                            <div>{!mql.matches && <img src={team.image} alt="" />}{team.name}</div>
+                            <div className="standing-item-team">{!mql.matches && <img src={team.image} alt="" />}{team.name}</div>
                             <div>{team.played}</div>
                             <div>{team.win}</div>
                             <div>{team.draw}</div>
