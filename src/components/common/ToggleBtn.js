@@ -1,8 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import ThemeContext from '../../contexts/theme'
 const ToggleBtn = () => {
-    const { state, actions } = useContext(ThemeContext)
-    const theme = state.theme
+    const { actions } = useContext(ThemeContext)
     const toggleTheme = actions.toggleTheme
     useEffect(() => {
         const app = document.querySelector("html")

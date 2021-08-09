@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "es6": true
     },
     "extends": [
         "eslint:recommended",
@@ -17,6 +18,10 @@
     "rules": {
         "semi": ["error", "never"],
         "no-unused-vars": "off",
+        "no-multi-spaces": "error",
+        "block-spacing" : "error",
+        "space-before-blocks": "error",
+        "space-before-function-paren" : "error",
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
             "warn",
