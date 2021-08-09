@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
     news,
     transfers
 })
-export function* rootSaga() {
+export function* rootSaga () {
     yield all([squadSaga(), matchSaga(), teamSaga(), newsSaga(), transfersSaga()])
 }
 
