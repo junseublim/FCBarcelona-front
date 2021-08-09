@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 
 const HeaderDropDownWrapper = styled.div`
@@ -10,7 +10,7 @@ const HeaderDropDownWrapper = styled.div`
     left: 0;
     width: 100%;
     z-index: 1;
-`;
+`
 
 const HeaderDropDownListWrapper = styled.div`
     display: none;
@@ -18,7 +18,7 @@ const HeaderDropDownListWrapper = styled.div`
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-weight: normal;
-`;
+`
 
 const HeaderDropDown = ({ type }) => {
     const droplist = [
@@ -26,8 +26,8 @@ const HeaderDropDown = ({ type }) => {
         ['Previous', 'Upcoming'],
         ['20-21/Winter', '20-21/Summer'],
         ['News', 'Sns', 'Reporters']
-    ];
-    const link = ['/squadList/', '/match/', '/transfer/', '/news/'];
+    ]
+    const link = ['/squadList/', '/match/', '/transfer/', '/news/']
     return (
         <HeaderDropDownWrapper className="content">
             {
@@ -40,7 +40,7 @@ const HeaderDropDown = ({ type }) => {
                 ))
             }
         </HeaderDropDownWrapper>
-    );
+    )
 }
 
-export default HeaderDropDown;
+export default HeaderDropDown

@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 
 const NewsPage = () => {
-    const { news } = useSelector(state => state.news);
-    const [selected, setSelected] = useState(0);
-    if (news.loading) return null;
+    const { news } = useSelector(state => state.news)
+    const [selected, setSelected] = useState(0)
+    if (news.loading) return null
 
     const moveNews = (index) => {
         if (index < 0) {
-            return;
+            return
         }
         if (index >= news.data.length) {
-            return;
+            return
         }
-        setSelected(index);
+        setSelected(index)
 
     }
     return (
@@ -38,7 +38,7 @@ const NewsPage = () => {
                     </div>
                 </a>
                 }
-                <a className="news-container" href={news.data[selected].link} target="_blank">
+                <a className="news-container" href={news.data[selected].link} target="_blank" rel="noreferrer">
                     <div className="img-wrapper">
                         <img src={news.data[selected].thumbnail} alt="" className="main-img" />
                     </div>
@@ -73,4 +73,4 @@ const NewsPage = () => {
     )
 }
 
-export default NewsPage;
+export default NewsPage

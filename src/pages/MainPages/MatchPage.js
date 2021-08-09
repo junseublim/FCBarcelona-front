@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 
 
 const MatchItem = ({ item }) => {
-    const { teams } = useSelector(state => state.teams);
-    if (!teams.data.length) return null;
+    const { teams } = useSelector(state => state.teams)
+    if (!teams.data.length) return null
     return (
         <div className="match-box">
             <div className="match-box-left">
@@ -31,15 +31,15 @@ const MatchItem = ({ item }) => {
 
 
 const MatchPage = ({ isDone }) => {
-    const { match } = useSelector(state => state.match);
-    const { teams } = useSelector(state => state.teams);
-    const [matchesToShow, setMatchesToShow] = useState([]);
+    const { match } = useSelector(state => state.match)
+    const { teams } = useSelector(state => state.teams)
+    const [matchesToShow, setMatchesToShow] = useState([])
     useEffect(() => {
-        if (isDone) setMatchesToShow(match.data.filter(item => item.isDone));
-        else if (isDone === false) setMatchesToShow(match.data.filter(item => !item.isDone));
-        else setMatchesToShow(match.data);
+        if (isDone) setMatchesToShow(match.data.filter(item => item.isDone))
+        else if (isDone === false) setMatchesToShow(match.data.filter(item => !item.isDone))
+        else setMatchesToShow(match.data)
 
-    }, [isDone, match, teams]);
+    }, [isDone, match, teams])
 
     return (
         <div className="match-table">
@@ -57,4 +57,4 @@ const MatchPage = ({ isDone }) => {
     )
 }
 
-export default MatchPage;
+export default MatchPage

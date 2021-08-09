@@ -1,14 +1,14 @@
-import React from 'react';
-import fcb_logo from '../static/img/fcb_logo.png';
-import HeaderDropDown from './HeaderDropDown/HeaderDropDown';
-import ToggleBtn from './common/ToggleBtn';
-import { Link } from 'react-router-dom';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import YouTubeIcon from '@material-ui/icons/YouTube';
+import React from 'react'
+import fcb_logo from '../static/img/fcb_logo.png'
+import HeaderDropDown from './HeaderDropDown/HeaderDropDown'
+import ToggleBtn from './common/ToggleBtn'
+import { Link } from 'react-router-dom'
+import InstagramIcon from '@material-ui/icons/Instagram'
+import FacebookIcon from '@material-ui/icons/Facebook'
+import TwitterIcon from '@material-ui/icons/Twitter'
+import YouTubeIcon from '@material-ui/icons/YouTube'
 const Header = () => {
-    let iconSize = 30;
+    let iconSize = 30
     return (
         <div className="header">
             <Link to="/">
@@ -20,16 +20,16 @@ const Header = () => {
             <div className="top-header">
                 <div>FOLLOW FC BARCELONA</div>
                 <div className="sns-list">
-                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link" target="_blank">
+                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link" target="_blank" rel="noreferrer">
                         <InstagramIcon style={{ fontSize: iconSize }} />
                     </a>
-                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link" target="_blank">
+                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link" target="_blank" rel="noreferrer">
                         <FacebookIcon style={{ fontSize: iconSize }} />
                     </a>
-                    <a href="https://twitter.com/fcbarcelona" className="sns-link" target="_blank">
+                    <a href="https://twitter.com/fcbarcelona" className="sns-link" target="_blank" rel="noreferrer">
                         <TwitterIcon style={{ fontSize: iconSize }} />
                     </a>
-                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link" target="_blank">
+                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link" target="_blank" rel="noreferrer">
                         <YouTubeIcon style={{ fontSize: iconSize }} />
                     </a>
                 </div>
@@ -68,7 +68,7 @@ const Header = () => {
                 <Link to="/news">
                     <span>
                         NEWS
-                </span>
+                    </span>
                 </Link>
                 <HeaderDropDown type={3} />
             </div>
@@ -77,4 +77,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Header

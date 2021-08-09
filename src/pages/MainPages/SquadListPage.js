@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import messi from '../../static/img/messi.webp'
-import axios from 'axios';
-import { Link, Route, Router, useParams, Switch, useRouteMatch } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React from 'react'
+import { Link, Route, useParams, Switch, useRouteMatch } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const SquadListGroupItem = ({ player }) => {
 
@@ -20,8 +18,8 @@ const SquadListGroupItem = ({ player }) => {
 }
 
 const SquadListGroup = ({ groupName }) => {
-    const { squad } = useSelector(state => state.squad);
-    if (squad.loading) return null;
+    const { squad } = useSelector(state => state.squad)
+    if (squad.loading) return null
 
     return (
         <div className="squad-list-group">
@@ -35,13 +33,13 @@ const SquadListGroup = ({ groupName }) => {
     )
 }
 const Squad = () => {
-    let { group, number } = useParams();
-    const { squad } = useSelector(state => state.squad);
+    let { group, number } = useParams()
+    const { squad } = useSelector(state => state.squad)
 
-    if (squad.loading) return null;
+    if (squad.loading) return null
 
-    let groupList = squad.data[group];
-    let player = groupList.find(p => p.number == number);
+    let groupList = squad.data[group]
+    let player = groupList.find(p => p.number == number)
     return (
         <div className="squad-page">
             <div className="player-img-wrap">
@@ -51,7 +49,7 @@ const Squad = () => {
                     <div className="player-number">{player.number}</div>
                     <div className="player-stats">
                         {Object.keys(player.stats).map(s => (
-                            <div className="stat-name"><div className="stat-num">{s}</div>{player.stats[s]}</div>
+                            <div className="stat-name" key={s}><div className="stat-num">{s}</div>{player.stats[s]}</div>
                         ))}
                     </div>
                 </div>
@@ -61,9 +59,9 @@ const Squad = () => {
 }
 
 const SquadList = () => {
-    let { group } = useParams();
-    const { squad } = useSelector(state => state.squad);
-    if (squad.loading) return null;
+    let { group } = useParams()
+    const { squad } = useSelector(state => state.squad)
+    if (squad.loading) return null
 
     return (
         <div className="squad-list">
@@ -76,7 +74,7 @@ const SquadList = () => {
 }
 
 const SquadListPage = () => {
-    let match = useRouteMatch();
+    let match = useRouteMatch()
     return (
         <Switch>
             <Route path={`${match.path}/:group/:number`}>
@@ -93,4 +91,4 @@ const SquadListPage = () => {
 }
 
 
-export default SquadListPage;
+export default SquadListPage

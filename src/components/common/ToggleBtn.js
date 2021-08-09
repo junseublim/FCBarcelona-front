@@ -1,20 +1,19 @@
-import React, { useEffect, useState, useContext } from 'react';
-import ThemeContext from '../../contexts/theme';
+import React, { useEffect, useContext } from 'react'
+import ThemeContext from '../../contexts/theme'
 const ToggleBtn = () => {
-    const { state, actions } = useContext(ThemeContext);
-    const theme = state.theme;
-    const toggleTheme = actions.toggleTheme;
+    const { actions } = useContext(ThemeContext)
+    const toggleTheme = actions.toggleTheme
     useEffect(() => {
-        const app = document.querySelector("html");
+        const app = document.querySelector("html")
         if (app.classList.contains('dark')) {
-            const toggleWrap = document.querySelector(".toggle-btn-wrap");
-            const toggleBtn = document.querySelector(".toggle-btn");
-            toggleWrap.classList.add('dark');
-            toggleBtn.classList.add('dark');
+            const toggleWrap = document.querySelector(".toggle-btn-wrap")
+            const toggleBtn = document.querySelector(".toggle-btn")
+            toggleWrap.classList.add('dark')
+            toggleBtn.classList.add('dark')
         }
-    });
+    })
     const onClick = () => {
-        toggleTheme();
+        toggleTheme()
     }
     return (
         <div className="toggle-btn-wrap" onClick={onClick}>
@@ -24,4 +23,4 @@ const ToggleBtn = () => {
     )
 }
 
-export default ToggleBtn;
+export default ToggleBtn

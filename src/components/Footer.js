@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Footer = () => {
     return (
         <div className="footer">
@@ -7,7 +9,7 @@ const Footer = () => {
             <br />
             junslim11@gmail.com
         </div>
-    );
+    )
 }
 
-export default Footer;
+export default Footer

@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import fcb_logo from '../../static/img/fcb_logo.png';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const StandingList = () => {
-    const { teams } = useSelector(state => state.teams);
-    const [mql, setMql] = useState(window.matchMedia('(max-width: 1355px)'));
+    const { teams } = useSelector(state => state.teams)
+    const [mql, setMql] = useState(window.matchMedia('(max-width: 1355px)'))
     useEffect(() => {
         function debounce(timeout = 300) {
-            let timer;
+            let timer
             return () => {
-                clearTimeout(timer);
-                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log("resize"); }, timeout);
-            };
+                clearTimeout(timer)
+                timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log("resize") }, timeout)
+            }
         }
-        const resized = debounce();
-        window.addEventListener("resize", resized);
-    }, []);
+        const resized = debounce()
+        window.addEventListener("resize", resized)
+    }, [])
 
     return (
 
@@ -46,6 +45,6 @@ const StandingList = () => {
                 })}
         </div>
     )
-};
+}
 
-export default StandingList;
+export default StandingList
