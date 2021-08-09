@@ -2,28 +2,28 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 
 
 export default function createModule(name, api) {
-    const upper = name.toUpperCase();
-    const get = `${name}/GET_${upper}`;
-    const success = `${name}/GET_${upper}_SUCCESS`;
-    const error = `${name}/GET_${upper}_ERROR`;
-    const getAction = () => ({ type: get });
+    const upper = name.toUpperCase()
+    const get = `${name}/GET_${upper}`
+    const success = `${name}/GET_${upper}_SUCCESS`
+    const error = `${name}/GET_${upper}_ERROR`
+    const getAction = () => ({ type: get })
     function* getSaga() {
         try {
-            const payload = yield call(api);
+            const payload = yield call(api)
             yield put({
                 type: success,
                 payload: payload
-            });
+            })
         } catch (e) {
             yield put({
                 type: error,
                 error: true,
                 payload: e
-            });
+            })
         }
     }
     function* Saga() {
-        yield takeEvery(get, getSaga);
+        yield takeEvery(get, getSaga)
     }
     const initialState = {
         [name]: {
@@ -31,7 +31,7 @@ export default function createModule(name, api) {
             loading: true,
             error: null
         }
-    };
+    }
     function reducer(state = initialState, action) {
         switch (action.type) {
             case get: {
@@ -64,11 +64,11 @@ export default function createModule(name, api) {
                 }
             }
             default: {
-                return state;
+                return state
             }
         }
     }
-    return [getAction, Saga, reducer];
+    return [getAction, Saga, reducer]
 }
 
 

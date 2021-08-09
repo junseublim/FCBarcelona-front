@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import UpcomingItem from './UpcomingItem';
-import { useSelector } from 'react-redux';
+import React from 'react'
+import styled from 'styled-components'
+import UpcomingItem from './UpcomingItem'
+import { useSelector } from 'react-redux'
 
 const UpcomingListWrapper = styled.div`
-`;
+`
 
 
 
 const UpcomingList = () => {
-    const { match } = useSelector(state => state.match);
-    if (match.loading) return null;
+    const { match } = useSelector(state => state.match)
+    if (match.loading) return null
 
     return (
         <UpcomingListWrapper>
@@ -21,4 +21,4 @@ const UpcomingList = () => {
         </UpcomingListWrapper>
     )
 }
-export default UpcomingList;
+export default UpcomingList

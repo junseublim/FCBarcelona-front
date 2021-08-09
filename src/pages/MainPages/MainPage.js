@@ -1,9 +1,9 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import SquadListPage from './SquadListPage';
-import MatchPage from './MatchPage';
-import NewsPage from './NewsPage';
-import TransferPage from './TransferPage';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import SquadListPage from './SquadListPage'
+import MatchPage from './MatchPage'
+import NewsPage from './NewsPage'
+import TransferPage from './TransferPage'
 
 const MainPage = () => {
     return (
@@ -38,4 +38,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage;
+export default MainPage

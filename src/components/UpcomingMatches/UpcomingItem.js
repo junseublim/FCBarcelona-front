@@ -1,7 +1,7 @@
-import React from 'react';
-import fcb_logo from '../../static/img/fcb_logo.png';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import React from 'react'
+import fcb_logo from '../../static/img/fcb_logo.png'
+import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
 const UpcomingItemWrapper = styled.div`
     display: grid;
@@ -10,7 +10,7 @@ const UpcomingItemWrapper = styled.div`
     justify-content: center;
     align-items: center; 
     padding: 1rem;
-`;
+`
 
 const Team = styled.div`
     margin: auto;
@@ -23,7 +23,7 @@ const Team = styled.div`
     img {
         width: 3rem;
     }
-`;
+`
 
 const MatchInfo = styled.div`
     grid-column: 1/4;
@@ -33,16 +33,16 @@ const MatchInfo = styled.div`
     font-size: 12px;
     width:100%;
     
-`;
+`
 const VSWrapper = styled.div`
     justify-self: center;
-`;
+`
 
 const UpcomingItem = ({ match }) => {
-    const { teams } = useSelector(state => state.teams);
-    if (teams.loading) return null;
+    const { teams } = useSelector(state => state.teams)
+    if (teams.loading) return null
 
-    const team = teams.data.find(item => item._id === match.team);
+    const team = teams.data.find(item => item._id === match.team)
     return (
         <UpcomingItemWrapper>
             {
@@ -69,4 +69,4 @@ const UpcomingItem = ({ match }) => {
     )
 }
 
-export default UpcomingItem;
+export default UpcomingItem
