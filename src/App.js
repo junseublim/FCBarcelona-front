@@ -14,7 +14,7 @@ import { getNews } from './modules/news'
 import { getTransfers } from './modules/transfers'
 import React from 'react'
 
-function App() {
+function App () {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getSquad())

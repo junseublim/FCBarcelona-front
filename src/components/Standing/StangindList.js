@@ -5,7 +5,7 @@ const StandingList = () => {
     const { teams } = useSelector(state => state.teams)
     const [mql, setMql] = useState(window.matchMedia('(max-width: 1355px)'))
     useEffect(() => {
-        function debounce(timeout = 300) {
+        function debounce (timeout = 300) {
             let timer
             return () => {
                 clearTimeout(timer)
