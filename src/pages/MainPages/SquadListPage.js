@@ -18,7 +18,6 @@ const SquadListGroupItem = ({ player }) => {
 
 const SquadListGroup = ({ groupName }) => {
   const { squad } = useSelector(state => state.squad)
-  if (squad.loading) return null
 
   return (
     <div className="squad-list-group">
@@ -31,14 +30,12 @@ const SquadListGroup = ({ groupName }) => {
     </div>
   )
 }
-const Squad = () => {
+const SquadPlayer = () => {
   const { group, number } = useParams()
   const { squad } = useSelector(state => state.squad)
 
-  if (squad.loading) return null
+  const player = squad.data[group].find(p => p.number === number)
 
-  const groupList = squad.data[group]
-  const player = groupList.find(p => p.number === number)
   return (
     <div className="squad-page">
       <div className="player-img-wrap">
@@ -48,7 +45,12 @@ const Squad = () => {
           <div className="player-number">{player.number}</div>
           <div className="player-stats">
             {Object.keys(player.stats).map(s => (
-              <div className="stat-name" key={s}><div className="stat-num">{s}</div>{player.stats[s]}</div>
+              <div className="stat-name" key={s}>
+                <div className="stat-num">
+                  {s}
+                </div>
+                {player.stats[s]}
+              </div>
             ))}
           </div>
         </div>
@@ -60,11 +62,11 @@ const Squad = () => {
 const SquadList = () => {
   const { group } = useParams()
   const { squad } = useSelector(state => state.squad)
-  if (squad.loading) return null
 
   return (
     <div className="squad-list">
       {group && <SquadListGroup groupName={group} key={0} />}
+
       {!group && Object.keys(squad.data).map((item, i) => (
         <SquadListGroup group={squad.data[item]} groupName={item} key={i} />
       ))}
@@ -74,10 +76,14 @@ const SquadList = () => {
 
 const SquadListPage = () => {
   const match = useRouteMatch()
+  const { squad } = useSelector(state => state.squad)
+
+  if (squad.loading) return null
+
   return (
     <Switch>
       <Route path={`${match.path}/:group/:number`}>
-        <Squad />
+        <SquadPlayer />
       </Route>
       <Route path={`${match.path}/:group`}>
         <SquadList />
