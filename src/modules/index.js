@@ -7,14 +7,14 @@ import transfers, { transfersSaga } from './transfers'
 import { all } from 'redux-saga/effects'
 
 const rootReducer = combineReducers({
-    squad,
-    match,
-    teams,
-    news,
-    transfers
+  squad,
+  match,
+  teams,
+  news,
+  transfers
 })
 export function* rootSaga () {
-    yield all([squadSaga(), matchSaga(), teamSaga(), newsSaga(), transfersSaga()])
+  yield all([squadSaga(), matchSaga(), teamSaga(), newsSaga(), transfersSaga()])
 }
 
 export default rootReducer

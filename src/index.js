@@ -17,7 +17,7 @@ sagaMiddleware.run(rootSaga)
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-             <React.StrictMode> 
+      <React.StrictMode> 
         <App />
       </React.StrictMode>
     </Provider>

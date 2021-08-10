@@ -9,16 +9,16 @@ const UpcomingListWrapper = styled.div`
 
 
 const UpcomingList = () => {
-    const { match } = useSelector(state => state.match)
-    if (match.loading) return null
+  const { match } = useSelector(state => state.match)
+  if (match.loading) return null
 
-    return (
-        <UpcomingListWrapper>
-            {match.data.length && match.data.map(item => (
-                <UpcomingItem match={item} key={item.date} />
-            ))}
+  return (
+    <UpcomingListWrapper>
+      {match.data.length && match.data.map(item => (
+        <UpcomingItem match={item} key={item.date} />
+      ))}
 
-        </UpcomingListWrapper>
-    )
+    </UpcomingListWrapper>
+  )
 }
 export default UpcomingList

@@ -16,6 +16,7 @@
         "unused-imports"
     ],
     "rules": {
+        "indent": ["error", 2],
         "semi": ["error", "never"],
         "no-unused-vars": "off",
         "no-multi-spaces": "error",

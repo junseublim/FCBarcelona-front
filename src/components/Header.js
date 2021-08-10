@@ -8,73 +8,73 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import YouTubeIcon from '@material-ui/icons/YouTube'
 const Header = () => {
-    let iconSize = 30
-    return (
-        <div className="header">
-            <Link to="/">
-                <div className="main">
-                    <img src={fcb_logo} alt="" />
-                    <span>FC BARCELONA</span>
-                </div>
-            </Link>
-            <div className="top-header">
-                <div>FOLLOW FC BARCELONA</div>
-                <div className="sns-list">
-                    <a href="https://www.instagram.com/fcbarcelona/" className="sns-link" target="_blank" rel="noreferrer">
-                        <InstagramIcon style={{ fontSize: iconSize }} />
-                    </a>
-                    <a href="https://www.facebook.com/fcbarcelona" className="sns-link" target="_blank" rel="noreferrer">
-                        <FacebookIcon style={{ fontSize: iconSize }} />
-                    </a>
-                    <a href="https://twitter.com/fcbarcelona" className="sns-link" target="_blank" rel="noreferrer">
-                        <TwitterIcon style={{ fontSize: iconSize }} />
-                    </a>
-                    <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link" target="_blank" rel="noreferrer">
-                        <YouTubeIcon style={{ fontSize: iconSize }} />
-                    </a>
-                </div>
-                <div className="darkmode">
-                    <span>Home</span>
-                    <ToggleBtn />
-                    <span>Away</span>
-                </div>
-            </div>
-            <div>
-                <Link to="/squadList">
-                    <span>
-                        SQUAD
-                    </span>
-                </Link>
-                <HeaderDropDown type={0} />
-            </div>
-
-            <div>
-                <Link to="/match">
-                    <span>
-                        MATCHES
-                    </span>
-                </Link>
-                <HeaderDropDown type={1} />
-            </div>
-            <div>
-                <Link to="/transfer">
-                    <span>
-                        TRANSFERS
-                    </span>
-                </Link>
-                <HeaderDropDown type={2} />
-            </div>
-            <div>
-                <Link to="/news">
-                    <span>
-                        NEWS
-                    </span>
-                </Link>
-                <HeaderDropDown type={3} />
-            </div>
-
+  let iconSize = 30
+  return (
+    <div className="header">
+      <Link to="/">
+        <div className="main">
+          <img src={fcb_logo} alt="" />
+          <span>FC BARCELONA</span>
         </div>
-    )
+      </Link>
+      <div className="top-header">
+        <div>FOLLOW FC BARCELONA</div>
+        <div className="sns-list">
+          <a href="https://www.instagram.com/fcbarcelona/" className="sns-link" target="_blank" rel="noreferrer">
+            <InstagramIcon style={{ fontSize: iconSize }} />
+          </a>
+          <a href="https://www.facebook.com/fcbarcelona" className="sns-link" target="_blank" rel="noreferrer">
+            <FacebookIcon style={{ fontSize: iconSize }} />
+          </a>
+          <a href="https://twitter.com/fcbarcelona" className="sns-link" target="_blank" rel="noreferrer">
+            <TwitterIcon style={{ fontSize: iconSize }} />
+          </a>
+          <a href="https://www.youtube.com/channel/UC14UlmYlSNiQCBe9Eookf_A" className="sns-link" target="_blank" rel="noreferrer">
+            <YouTubeIcon style={{ fontSize: iconSize }} />
+          </a>
+        </div>
+        <div className="darkmode">
+          <span>Home</span>
+          <ToggleBtn />
+          <span>Away</span>
+        </div>
+      </div>
+      <div>
+        <Link to="/squadList">
+          <span>
+                        SQUAD
+          </span>
+        </Link>
+        <HeaderDropDown type={0} />
+      </div>
+
+      <div>
+        <Link to="/match">
+          <span>
+                        MATCHES
+          </span>
+        </Link>
+        <HeaderDropDown type={1} />
+      </div>
+      <div>
+        <Link to="/transfer">
+          <span>
+                        TRANSFERS
+          </span>
+        </Link>
+        <HeaderDropDown type={2} />
+      </div>
+      <div>
+        <Link to="/news">
+          <span>
+                        NEWS
+          </span>
+        </Link>
+        <HeaderDropDown type={3} />
+      </div>
+
+    </div>
+  )
 }
 
 export default Header

@@ -21,26 +21,26 @@ const HeaderDropDownListWrapper = styled.div`
 `
 
 const HeaderDropDown = ({ type }) => {
-    const droplist = [
-        ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'],
-        ['Previous', 'Upcoming'],
-        ['20-21/Winter', '20-21/Summer'],
-        ['News', 'Sns', 'Reporters']
-    ]
-    const link = ['/squadList/', '/match/', '/transfer/', '/news/']
-    return (
-        <HeaderDropDownWrapper className="content">
-            {
-                droplist[type].map(item => (
-                    <Link to={`${link[type]}${item}`} key={item}>
-                        <HeaderDropDownListWrapper className="link" key={item}>
-                            {item}
-                        </HeaderDropDownListWrapper>
-                    </Link>
-                ))
-            }
-        </HeaderDropDownWrapper>
-    )
+  const droplist = [
+    ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'],
+    ['Previous', 'Upcoming'],
+    ['20-21/Winter', '20-21/Summer'],
+    ['News', 'Sns', 'Reporters']
+  ]
+  const link = ['/squadList/', '/match/', '/transfer/', '/news/']
+  return (
+    <HeaderDropDownWrapper className="content">
+      {
+        droplist[type].map(item => (
+          <Link to={`${link[type]}${item}`} key={item}>
+            <HeaderDropDownListWrapper className="link" key={item}>
+              {item}
+            </HeaderDropDownListWrapper>
+          </Link>
+        ))
+      }
+    </HeaderDropDownWrapper>
+  )
 }
 
 export default HeaderDropDown

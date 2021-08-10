@@ -16,6 +16,7 @@ import React from 'react'
 
 function App () {
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(getSquad())
     dispatch(getMatch())

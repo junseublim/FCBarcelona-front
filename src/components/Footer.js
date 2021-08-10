@@ -1,15 +1,15 @@
 import React from 'react'
 
 const Footer = () => {
-    return (
-        <div className="footer">
+  return (
+    <div className="footer">
             Copyright © junseublim
-            <br />
+      <br />
             www.github.com/junseublim
-            <br />
+      <br />
             junslim11@gmail.com
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Footer
