@@ -10,6 +10,7 @@ const UpcomingListWrapper = styled.div`
 
 const UpcomingList = () => {
   const { match } = useSelector(state => state.match)
+  
   if (match.loading) return null
 
   return (
@@ -17,7 +18,6 @@ const UpcomingList = () => {
       {match.data.length && match.data.map(item => (
         <UpcomingItem match={item} key={item.date} />
       ))}
-
     </UpcomingListWrapper>
   )
 }

@@ -40,9 +40,11 @@ const VSWrapper = styled.div`
 
 const UpcomingItem = ({ match }) => {
   const { teams } = useSelector(state => state.teams)
-  if (teams.loading) return null
 
+  if (teams.loading) return null
+  
   const team = teams.data.find(item => item._id === match.team)
+  
   return (
     <UpcomingItemWrapper>
       {

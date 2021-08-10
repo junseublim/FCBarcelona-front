@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 const StandingList = () => {
   const { teams } = useSelector(state => state.teams)
   const [mql, setMql] = useState(window.matchMedia('(max-width: 1355px)'))
+
   useEffect(() => {
     function debounce (timeout = 300) {
       let timer
@@ -12,7 +13,9 @@ const StandingList = () => {
         timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log("resize") }, timeout)
       }
     }
+
     const resized = debounce()
+
     window.addEventListener("resize", resized)
   }, [])
 

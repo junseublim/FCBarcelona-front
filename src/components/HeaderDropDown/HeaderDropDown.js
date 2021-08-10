@@ -27,7 +27,9 @@ const HeaderDropDown = ({ type }) => {
     ['20-21/Winter', '20-21/Summer'],
     ['News', 'Sns', 'Reporters']
   ]
+
   const link = ['/squadList/', '/match/', '/transfer/', '/news/']
+  
   return (
     <HeaderDropDownWrapper className="content">
       {
