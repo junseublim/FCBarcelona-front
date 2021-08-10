@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-
 const HeaderDropDownWrapper = styled.div`
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -29,7 +28,7 @@ const HeaderDropDown = ({ type }) => {
   ]
 
   const link = ['/squadList/', '/match/', '/transfer/', '/news/']
-  
+
   return (
     <HeaderDropDownWrapper className="content">
       {

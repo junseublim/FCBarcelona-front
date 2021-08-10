@@ -1,7 +1,8 @@
-import { get_news } from '../api/api'
-import createModule from './lib/createModule'
+import API from '../api/api'
+import createGetModule from './lib/createGetModule'
 
-const [getNews, newsSaga, news] = createModule("news", get_news)
+const [getNews, newsSaga, newsReducer] = createGetModule('news', API.getNews)
 
 export { getNews, newsSaga }
-export default news
+
+export default newsReducer

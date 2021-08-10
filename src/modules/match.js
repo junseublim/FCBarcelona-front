@@ -1,7 +1,8 @@
-import { get_matches } from '../api/api'
-import createModule from './lib/createModule'
+import API from '../api/api'
+import createGetModule from './lib/createGetModule'
 
-const [getMatch, matchSaga, matches] = createModule("match", get_matches)
+const [getMatches, matchSaga, matchReducer] = createGetModule('match', API.getMatches)
 
-export { getMatch, matchSaga }
-export default matches
+export { getMatches, matchSaga }
+
+export default matchReducer

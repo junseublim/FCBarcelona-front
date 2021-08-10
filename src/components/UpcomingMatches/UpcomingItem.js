@@ -1,5 +1,5 @@
 import React from 'react'
-import fcb_logo from '../../static/img/fcb_logo.png'
+import fcbLogo from '../../static/img/fcb_logo.png'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
@@ -42,16 +42,16 @@ const UpcomingItem = ({ match }) => {
   const { teams } = useSelector(state => state.teams)
 
   if (teams.loading) return null
-  
+
   const team = teams.data.find(item => item._id === match.team)
-  
+
   return (
     <UpcomingItemWrapper>
       {
         team && (
           <>
             <Team>
-              <img src={fcb_logo} alt="" />
+              <img src={fcbLogo} alt="" />
               <div>FC Barcelona</div>
             </Team>
             <VSWrapper>VS</VSWrapper>

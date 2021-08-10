@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
+import { all } from 'redux-saga/effects'
+
 import squad, { squadSaga } from './squad'
 import teams, { teamSaga } from './teams'
 import match, { matchSaga } from './match'
 import news, { newsSaga } from './news'
 import transfers, { transfersSaga } from './transfers'
-import { all } from 'redux-saga/effects'
 
 const rootReducer = combineReducers({
   squad,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   news,
   transfers
 })
-export function* rootSaga () {
+
+export function * rootSaga () {
   yield all([squadSaga(), matchSaga(), teamSaga(), newsSaga(), transfersSaga()])
 }
 

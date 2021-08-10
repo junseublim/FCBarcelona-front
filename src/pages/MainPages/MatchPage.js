@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
-
-
 
 const MatchItem = ({ item }) => {
   const { teams } = useSelector(state => state.teams)
@@ -29,7 +26,6 @@ const MatchItem = ({ item }) => {
   )
 }
 
-
 const MatchPage = ({ isDone }) => {
   const { match } = useSelector(state => state.match)
   const { teams } = useSelector(state => state.teams)
@@ -38,7 +34,6 @@ const MatchPage = ({ isDone }) => {
     if (isDone) setMatchesToShow(match.data.filter(item => item.isDone))
     else if (isDone === false) setMatchesToShow(match.data.filter(item => !item.isDone))
     else setMatchesToShow(match.data)
-
   }, [isDone, match, teams])
 
   return (

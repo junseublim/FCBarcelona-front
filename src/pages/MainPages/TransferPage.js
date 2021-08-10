@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 
-
 const TransferItem = ({ item }) => {
-
   return (
     <div className="transfer-item">
       {item.isIn
-        ? <ArrowBackIcon color="primary" fontSize="large" style={{ padding: 10, position: "absolute", right: 0 }} />
-        : <ArrowForwardIcon color="error" fontSize="large" style={{ padding: 10, position: "absolute", right: 0 }} />
+        ? <ArrowBackIcon color="primary" fontSize="large" style={{ padding: 10, position: 'absolute', right: 0 }} />
+        : <ArrowForwardIcon color="error" fontSize="large" style={{ padding: 10, position: 'absolute', right: 0 }} />
       }
       <div className="transfer-info">
         <div>Name: <span>{item.name}</span></div>
@@ -38,7 +35,6 @@ const TransferPage = () => {
       const season = season1.substr(0, 2) + '/' + season1.substr(3, 2) + ' ' + season2
       setTransferList(transfers.data.filter(item => item.season === season))
     }
-
   }, [season1, season2, transfers])
   return (
     <div>

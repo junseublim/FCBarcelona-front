@@ -1,7 +1,8 @@
-import { get_teams } from '../api/api'
-import createModule from './lib/createModule'
+import API from '../api/api'
+import createGetModule from './lib/createGetModule'
 
-const [getTeams, teamSaga, teams] = createModule("teams", get_teams)
+const [getTeams, teamSaga, teamReducer] = createGetModule('teams', API.getTeams)
 
 export { getTeams, teamSaga }
-export default teams
+
+export default teamReducer

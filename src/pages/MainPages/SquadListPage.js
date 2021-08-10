@@ -3,7 +3,6 @@ import { Link, Route, useParams, Switch, useRouteMatch } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const SquadListGroupItem = ({ player }) => {
-
   return (
     <Link to={`/squadList/${player.position}s/${player.number}`}>
       <div className="squad-group-player">
@@ -33,13 +32,13 @@ const SquadListGroup = ({ groupName }) => {
   )
 }
 const Squad = () => {
-  let { group, number } = useParams()
+  const { group, number } = useParams()
   const { squad } = useSelector(state => state.squad)
 
   if (squad.loading) return null
 
-  let groupList = squad.data[group]
-  let player = groupList.find(p => p.number == number)
+  const groupList = squad.data[group]
+  const player = groupList.find(p => p.number === number)
   return (
     <div className="squad-page">
       <div className="player-img-wrap">
@@ -59,7 +58,7 @@ const Squad = () => {
 }
 
 const SquadList = () => {
-  let { group } = useParams()
+  const { group } = useParams()
   const { squad } = useSelector(state => state.squad)
   if (squad.loading) return null
 
@@ -74,7 +73,7 @@ const SquadList = () => {
 }
 
 const SquadListPage = () => {
-  let match = useRouteMatch()
+  const match = useRouteMatch()
   return (
     <Switch>
       <Route path={`${match.path}/:group/:number`}>
@@ -89,6 +88,5 @@ const SquadListPage = () => {
     </Switch>
   )
 }
-
 
 export default SquadListPage

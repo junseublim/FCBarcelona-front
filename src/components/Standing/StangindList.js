@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux'
 
 const StandingList = () => {
   const { teams } = useSelector(state => state.teams)
+
+  if (teams === undefined) return null
+
   const [mql, setMql] = useState(window.matchMedia('(max-width: 1355px)'))
 
   useEffect(() => {
@@ -10,13 +13,13 @@ const StandingList = () => {
       let timer
       return () => {
         clearTimeout(timer)
-        timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log("resize") }, timeout)
+        timer = setTimeout(() => { setMql(window.matchMedia('(max-width: 1355px)')); console.log('resize') }, timeout)
       }
     }
 
     const resized = debounce()
 
-    window.addEventListener("resize", resized)
+    window.addEventListener('resize', resized)
   }, [])
 
   return (
@@ -44,7 +47,6 @@ const StandingList = () => {
               <div>{team.points}</div>
             </div>
           )
-
         })}
     </div>
   )

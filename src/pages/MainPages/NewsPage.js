@@ -3,21 +3,18 @@ import { useSelector } from 'react-redux'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
-
 const NewsPage = () => {
   const { news } = useSelector(state => state.news)
   const [selected, setSelected] = useState(0)
+
   if (news.loading) return null
 
   const moveNews = (index) => {
-    if (index < 0) {
+    if (index < 0 || index >= news.data.length) {
       return
     }
-    if (index >= news.data.length) {
-      return
-    }
-    setSelected(index)
 
+    setSelected(index)
   }
   return (
     <div className="main-container">

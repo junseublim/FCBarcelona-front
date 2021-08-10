@@ -6,11 +6,9 @@ import { useSelector } from 'react-redux'
 const UpcomingListWrapper = styled.div`
 `
 
-
-
 const UpcomingList = () => {
   const { match } = useSelector(state => state.match)
-  
+
   if (match.loading) return null
 
   return (

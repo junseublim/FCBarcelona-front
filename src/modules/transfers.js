@@ -1,7 +1,8 @@
-import { get_transfers } from '../api/api'
-import createModule from './lib/createModule'
+import API from '../api/api'
+import createGetModule from './lib/createGetModule'
 
-const [getTransfers, transfersSaga, transfers] = createModule("transfers", get_transfers)
+const [getTransfers, transfersSaga, transfersReducer] = createGetModule('transfers', API.getTransfers)
 
 export { getTransfers, transfersSaga }
-export default transfers
+
+export default transfersReducer

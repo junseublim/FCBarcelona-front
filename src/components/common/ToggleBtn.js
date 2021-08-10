@@ -6,11 +6,11 @@ const ToggleBtn = () => {
   const toggleTheme = actions.toggleTheme
 
   useEffect(() => {
-    const app = document.querySelector("html")
+    const app = document.querySelector('html')
 
     if (app.classList.contains('dark')) {
-      const toggleWrap = document.querySelector(".toggle-btn-wrap")
-      const toggleBtn = document.querySelector(".toggle-btn")
+      const toggleWrap = document.querySelector('.toggle-btn-wrap')
+      const toggleBtn = document.querySelector('.toggle-btn')
       toggleWrap.classList.add('dark')
       toggleBtn.classList.add('dark')
     }

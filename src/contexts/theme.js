@@ -13,26 +13,25 @@ const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme')
     let isDark
-    if (localTheme) isDark = localTheme === 'dark' ? true : false
+    if (localTheme) isDark = localTheme === 'dark'
     else isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     if (isDark) setMode('dark')
-    //setComponentMounted(true);
+    // setComponentMounted(true);
   }, [])
 
   const setMode = mode => {
     window.localStorage.setItem('theme', mode)
     if (mode === 'dark') {
       const app = document.querySelector('html')
-      const toggleWrap = document.querySelector(".toggle-btn-wrap")
-      const toggleBtn = document.querySelector(".toggle-btn")
+      const toggleWrap = document.querySelector('.toggle-btn-wrap')
+      const toggleBtn = document.querySelector('.toggle-btn')
       toggleWrap.classList.add('dark')
       toggleBtn.classList.add('dark')
       app.classList.add('dark')
-    }
-    else {
+    } else {
       const app = document.querySelector('html')
-      const toggleWrap = document.querySelector(".toggle-btn-wrap")
-      const toggleBtn = document.querySelector(".toggle-btn")
+      const toggleWrap = document.querySelector('.toggle-btn-wrap')
+      const toggleBtn = document.querySelector('.toggle-btn')
       toggleWrap.classList.remove('dark')
       toggleBtn.classList.remove('dark')
       app.classList.remove('dark')
@@ -43,8 +42,7 @@ const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     if (theme === 'light') {
       setMode('dark')
-    }
-    else {
+    } else {
       setMode('light')
     }
   }

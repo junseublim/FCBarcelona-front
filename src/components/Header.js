@@ -1,5 +1,5 @@
 import React from 'react'
-import fcb_logo from '../static/img/fcb_logo.png'
+import fcbLogo from '../static/img/fcb_logo.png'
 import HeaderDropDown from './HeaderDropDown/HeaderDropDown'
 import ToggleBtn from './common/ToggleBtn'
 import { Link } from 'react-router-dom'
@@ -9,13 +9,13 @@ import TwitterIcon from '@material-ui/icons/Twitter'
 import YouTubeIcon from '@material-ui/icons/YouTube'
 
 const Header = () => {
-  let iconSize = 30
-  
+  const iconSize = 30
+
   return (
     <div className="header">
       <Link to="/">
         <div className="main">
-          <img src={fcb_logo} alt="" />
+          <img src={fcbLogo} alt="" />
           <span>FC BARCELONA</span>
         </div>
       </Link>
