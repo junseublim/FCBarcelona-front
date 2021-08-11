@@ -16,6 +16,7 @@ const NewsPage = () => {
 
     setSelected(index)
   }
+
   return (
     <div className="main-container">
       {selected > 0 && <div className="move-btn" onClick={() => moveNews(selected - 1)}> <ArrowBackIosIcon style={{ fontSize: 80 }} /> </div>}
@@ -62,7 +63,6 @@ const NewsPage = () => {
           </div>
         </a>
         }
-
       </div>
       {selected < news.data.length - 1 && <div className="move-btn" onClick={() => moveNews(selected + 1)}> <ArrowForwardIosIcon style={{ fontSize: 80 }} /> </div>}
     </div>

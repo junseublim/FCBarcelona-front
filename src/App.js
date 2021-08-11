@@ -4,8 +4,8 @@ import Footer from './components/Footer'
 import StandingList from './components/Standing/StangindList'
 import UpcomingList from './components/UpcomingMatches/UpcomingList'
 import MainPage from './pages/MainPages/MainPage'
-import React, { useEffect } from 'react'
-import { ThemeProvider } from './contexts/theme'
+import React, { useEffect, useContext } from 'react'
+import ThemeContext from './contexts/theme'
 import { useDispatch } from 'react-redux'
 import { getSquad } from './modules/squad'
 import { getMatches } from './modules/match'
@@ -15,6 +15,8 @@ import { getTransfers } from './modules/transfers'
 
 function App () {
   const dispatch = useDispatch()
+  const { state } = useContext(ThemeContext)
+  const theme = state.theme
 
   useEffect(() => {
     dispatch(getSquad())
@@ -24,16 +26,22 @@ function App () {
     dispatch(getTransfers())
   }, [dispatch])
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.querySelector('html').classList.add('dark')
+    } else {
+      document.querySelector('html').classList.remove('dark')
+    }
+  }, [theme])
+
   return (
-    <ThemeProvider>
-      <div className="App" >
-        <Header />
-        <StandingList />
-        <MainPage />
-        <UpcomingList />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="App" >
+      <Header />
+      <StandingList />
+      <MainPage />
+      <UpcomingList />
+      <Footer />
+    </div>
   )
 }
 

@@ -1,14 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
 import {
   BrowserRouter as Router
 } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer, { rootSaga } from './modules'
 import createSagaMiddleware from 'redux-saga'
+import App from './App'
+import './index.css'
+import rootReducer, { rootSaga } from './modules'
+import { ThemeProvider } from './contexts/theme'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -19,9 +20,11 @@ sagaMiddleware.run(rootSaga)
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <ThemeProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ThemeProvider>
     </Provider>
   </Router>,
   document.getElementById('root')

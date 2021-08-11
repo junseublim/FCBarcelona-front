@@ -29,6 +29,7 @@ const TransferPage = () => {
   const { season1, season2 } = useParams()
   const { transfers } = useSelector(state => state.transfers)
   const [transferList, setTransferList] = useState([])
+
   useEffect(() => {
     if (!season1) setTransferList(transfers.data)
     else {
@@ -36,6 +37,7 @@ const TransferPage = () => {
       setTransferList(transfers.data.filter(item => item.season === season))
     }
   }, [season1, season2, transfers])
+
   return (
     <div>
       <div className="transfer-wrapper">

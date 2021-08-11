@@ -30,6 +30,7 @@ const SquadListGroup = ({ groupName }) => {
     </div>
   )
 }
+
 const SquadPlayer = () => {
   const { group, number } = useParams()
   const { squad } = useSelector(state => state.squad)
