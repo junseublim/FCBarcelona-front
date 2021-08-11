@@ -5,9 +5,9 @@ const Footer = () => {
     <div className="footer">
             Copyright © junseublim
       <br />
-            www.github.com/junseublim
+      Homepage: <a href="https://github.com/junseublim">www.github.com/junseublim</a>
       <br />
-            junslim11@gmail.com
+      E-Mail: <a href="mailto: junslim11@gmail.com">junslim11@gmail.com</a>
     </div>
   )
 }
